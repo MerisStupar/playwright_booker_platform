@@ -9,13 +9,20 @@ const config: PlaywrightTestConfig = {
              use: {
                 ...devices["Desktop Chrome"]
              }
+        },
+
+        {
+            name: "iphone",
+            use: {
+                ...devices["iPhone 8"]
+            }
         }
     ],
 
 
-    testMatch: ["tests/first.test.ts"],
+    testMatch: ["tests/login.test.ts"],
     use: {
-        baseURL: "https://automationintesting.online/",
+        baseURL: "https://automationintesting.online",
         headless: false,
         screenshot: "on",
         video: "on",

@@ -1,0 +1,21 @@
+{
+  "name": "playwright_booker_platform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MerisStupar/playwright_booker_platform.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MerisStupar/playwright_booker_platform/issues"
+  },
+  "homepage": "https://github.com/MerisStupar/playwright_booker_platform#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.33.0"
+  }
+}

@@ -45,20 +45,7 @@
         "testDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
-          "tests/login.test.ts"
-        ],
-        "timeout": 30000
-      },
-      {
-        "outputDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform/test-results",
-        "repeatEach": 1,
-        "retries": 0,
-        "id": "iphone",
-        "name": "iphone",
-        "testDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform",
-        "testIgnore": [],
-        "testMatch": [
-          "tests/login.test.ts"
+          "tests/rooms.test.ts"
         ],
         "timeout": 30000
       }
@@ -66,18 +53,18 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.33.0",
-    "workers": 2,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
     {
-      "title": "tests\\login.test.ts",
-      "file": "tests/login.test.ts",
+      "title": "tests\\rooms.test.ts",
+      "file": "tests/rooms.test.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "test",
+          "title": "Test login admin function",
           "ok": true,
           "tags": [],
           "tests": [
@@ -91,54 +78,22 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 4752,
+                  "duration": 13306,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-03T12:58:58.150Z",
+                  "startTime": "2023-05-04T11:07:53.436Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-test-chrome\\video.webm"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Test-login-admin-function-chrome\\video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-test-chrome\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            },
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "iphone",
-              "projectName": "iphone",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "status": "passed",
-                  "duration": 4997,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-03T12:58:58.143Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-test-iphone\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-test-iphone\\test-finished-1.png"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Test-login-admin-function-chrome\\test-finished-1.png"
                     }
                   ]
                 }
@@ -146,84 +101,9 @@
               "status": "expected"
             }
           ],
-          "id": "ef85df6096d4739f2c52-0a8693ef67ec640b7435",
-          "file": "tests/login.test.ts",
-          "line": 12,
-          "column": 5
-        },
-        {
-          "title": "Test login - with POM",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chrome",
-              "projectName": "chrome",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 1217,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-03T12:59:03.609Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-Test-login---with-POM-chrome\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-Test-login---with-POM-chrome\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            },
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "iphone",
-              "projectName": "iphone",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "status": "passed",
-                  "duration": 1635,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-03T12:59:04.026Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-Test-login---with-POM-iphone\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-Test-login---with-POM-iphone\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "ef85df6096d4739f2c52-7afece4cacb78cbf29d8",
-          "file": "tests/login.test.ts",
-          "line": 33,
+          "id": "841e33bd07809b12c892-d118f1d4d450654012c9",
+          "file": "tests/rooms.test.ts",
+          "line": 11,
           "column": 5
         }
       ]

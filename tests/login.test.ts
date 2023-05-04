@@ -9,7 +9,7 @@ test.beforeEach(async ({ page, baseURL }) => {
 });
 
 
-test("test", async ({ page, baseURL }) => {
+test("Admin login - basic test", async ({ page, baseURL }) => {
   await page.goto(`${baseURL}/#/admin`);
   const usernameField = await page.locator(`#username`);
   const passwordField = await page.locator(`#password`);
@@ -30,7 +30,7 @@ test("test", async ({ page, baseURL }) => {
 });
 
 
-test('Test login - with POM', async ({ page, baseURL }) => {
+test('Admin login - with POM', async ({ page, baseURL }) => {
     
     const login = new LoginPage(page);
     await login.enterUsername("admin");

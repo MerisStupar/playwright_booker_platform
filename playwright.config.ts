@@ -11,16 +11,16 @@ const config: PlaywrightTestConfig = {
              }
         },
 
-        {
-            name: "iphone",
-            use: {
-                ...devices["iPhone 8"]
-            }
-        }
+        // {
+        //     name: "iphone",
+        //     use: {
+        //         ...devices["iPhone 8"]
+        //     }
+        // }
     ],
 
 
-    testMatch: ["tests/login.test.ts"],
+    testMatch: ["tests/rooms.test.ts"],
     use: {
         baseURL: "https://automationintesting.online",
         headless: false,

@@ -23,6 +23,12 @@ export default class LoginPage{
         await this.loginButton.click();
     }
 
+    async loginAdmin(username: string, password:string){
+        await this.enterUsername(username);
+        await this.enterPassword(password);
+        await this.clickLoginButton();
+    }
+
 
 
 }

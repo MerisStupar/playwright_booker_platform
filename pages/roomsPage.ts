@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { Page, expect } from "@playwright/test";
 
 
 
@@ -28,8 +28,11 @@ export default class RoomsPage{
         await this.roomID.type(roomID);
     }
 
-    async selectRoomType(){
-        await this.roomType.click();
+    async selectRoomType(dataValue:string){
+      await this.roomType.click();
+      await this.roomType.selectOption({
+        value: dataValue
+      })
     }
 
     async selectRoomAccessible(){
@@ -41,31 +44,63 @@ export default class RoomsPage{
     }
 
     async selectWiFi(){
-        await this.roomWifiCB.click();
+        await this.roomWifiCB.check();
     }
 
     async selectTV(){
-        await this.roomTVCB.click();
+        await this.roomTVCB.check();
     }
     
     async selectRadio(){
-        await this.roomRadioCB.click();
+        await this.roomRadioCB.check();
     }
 
     async selectRefreshments(){
-        await this.roomRefreshmentsCB.click();
+        await this.roomRefreshmentsCB.check();
     }
 
     async selectSafe(){
-        await this.roomSafeCB.click();
+        await this.roomSafeCB.check();
     }
 
     async selectViews(){
-        await this.roomViewsCB.click();
+        await this.roomViewsCB.check();
     }
 
     async selectCreateButton(){
         await this.createButton.click();
+    }
+
+    public async addingFullRoom(roomID:string, typeValue:string, accessible:string, roomPrice:string) {
+        //Adding number of room
+        await this.roomID.type(roomID);
+        //Adding type of room
+        await this.roomType.click();
+        await this.roomType.selectOption({
+            value: typeValue
+        })
+
+        //Adding accessible
+        await this.roomAccessible.click();
+        await this.roomAccessible.selectOption({
+            value: accessible
+        })
+
+        //Adding price
+        await this.roomPrice.type(roomPrice)
+
+        //Adding room details
+        await this.selectWiFi();
+        await this.selectTV();
+        await this.selectViews();
+        await this.selectRefreshments();
+        await this.selectSafe();
+        await this.selectRadio();
+
+    
+
+        //Create room - clicking the button create
+        await this.selectCreateButton();
     }
 
 

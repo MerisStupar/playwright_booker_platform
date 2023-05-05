@@ -3,6 +3,7 @@ import { Page, expect } from "@playwright/test";
 
 
 export default class RoomsPage {
+    
   constructor(public page: Page) {}
 
   //Room's fields and dropdowns

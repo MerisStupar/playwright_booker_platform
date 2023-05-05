@@ -6,11 +6,14 @@ export default class LoginPage{
     
     constructor (public page: Page){}
 
-    private usernameField = this.page.locator(`#username`);
-    private passwordField = this.page.locator(`#password`);
-    private loginButton = this.page.locator(`#doLogin`);
+    usernameField = this.page.locator(`#username`);
+    passwordField = this.page.locator(`#password`);
+    loginButton = this.page.locator(`#doLogin`);
 
-    logoutNavbar = this.page.locator(`//a[contains(text(),'Logout')]`)
+    logoutNavbar = this.page.locator(`//a[contains(text(),'Logout')]`);
+    loginHeaderText = this.page.locator(`h2[data-testid='login-header']`);
+
+    
 
 
     async enterUsername(username: string){
@@ -25,11 +28,16 @@ export default class LoginPage{
         await this.loginButton.click();
     }
 
+    async loginAdmin1(username: string, password:string){
+        await this.enterUsername(username);
+        await this.enterPassword(password);
+        await this.clickLoginButton();
+    }
+
     async loginAdmin(username: string, password:string){
         await this.enterUsername(username);
         await this.enterPassword(password);
         await this.clickLoginButton();
-        expect(this.logoutNavbar).toBeVisible();
     }
 
 

@@ -1,36 +1,36 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "../baseFixture/baseFixture";
 
-import LoginPage from "../pages/loginPage";
-import RoomsPage from "../pages/roomsPage";
+// import LoginPage from "../pages/loginPage";
+// import RoomsPage from "../pages/roomsPage";
 
 test.beforeEach(async ({ page, baseURL }) => {
     await page.goto(`${baseURL}/#/admin`);
 });
 
 
-test.only('Test login admin function', async ({ page }) => {
+test.only('Test login admin function', async ({ page, loginPage, roomsPage }) => {
 
-    const login = new LoginPage(page);
-    const rooms = new RoomsPage(page);
+    // const login = new LoginPage(page);
+    // const rooms = new RoomsPage(page);
 
-    await login.loginAdmin("admin", "password");
+    await loginPage.loginAdmin("admin", "password");
 
-    await rooms.enterRoomID("707");
-    
-    await rooms.selectRoomType("Family");
-    await rooms.selectRoomAccessible("true");
-    await rooms.enterRoomPrice("50");
+    await roomsPage.enterRoomID("707");
 
-    await rooms.selectWiFi();
-    await rooms.selectTV();
+    await roomsPage.selectRoomType("Family");
+    await roomsPage.selectRoomAccessible("true");
+    await roomsPage.enterRoomPrice("50");
+
+    await roomsPage.selectWiFi();
+    await roomsPage.selectTV();
 });
 
-test.skip('Adding full specified room', async ({ page }) => {
+test.skip('Adding full specified room', async ({ page, loginPage, roomsPage }) => {
 
-    const login = new LoginPage(page);
+    // const login = new LoginPage(page);
 
 
-    await login.loginAdmin("admin", "password");
+    await loginPage.loginAdmin("admin", "password");
 
     const roomID = await page.locator(`#roomName`);
     const roomType = await page.locator(`#type`);

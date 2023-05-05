@@ -1,7 +1,4 @@
-import { expect, test } from "@playwright/test";
-
-
-import LoginPage from "../pages/loginPage";
+import { expect, test } from "../baseFixture/baseFixture";
 
 
 test.beforeEach(async ({ page, baseURL }) => {
@@ -9,8 +6,8 @@ test.beforeEach(async ({ page, baseURL }) => {
 });
 
 
-test("Admin login - basic test", async ({ page, baseURL }) => {
-  await page.goto(`${baseURL}/#/admin`);
+test("Admin login - basic test", async ({ page }) => {
+
   const usernameField = await page.locator(`#username`);
   const passwordField = await page.locator(`#password`);
   const loginBtn = await page.locator(`#doLogin`);
@@ -29,13 +26,36 @@ test("Admin login - basic test", async ({ page, baseURL }) => {
 
 });
 
-
-test('Admin login - with POM', async ({ page, baseURL }) => {
-    
-    const login = new LoginPage(page);
-    await login.enterUsername("admin");
-    await login.enterPassword("password");
-    await login.clickLoginButton();
+test('Passing empty data - Login', async ({ loginPage }) => {
+  
+  //Passing empty login
+  await loginPage.loginAdmin1("","");
+  await expect(loginPage.usernameField).toHaveCSS('border', '1px solid rgb(255, 0, 0)');
+  await expect(loginPage.passwordField).toHaveCSS('border', '1px solid rgb(255, 0, 0)');
 
 });
+
+test('Passing only username - Login', async ({ loginPage }) => {
+
+  await loginPage.loginAdmin1("admin","");
+  await expect(loginPage.usernameField).toHaveCSS('border', '1px solid rgb(255, 0, 0)');
+  await expect(loginPage.passwordField).toHaveCSS('border', '1px solid rgb(255, 0, 0)');
+});
+
+test('Passing only password - Login', async ({ loginPage }) => {
+
+  await loginPage.loginAdmin1("","password");
+  await expect(loginPage.usernameField).toHaveCSS('border', '1px solid rgb(255, 0, 0)');
+  await expect(loginPage.passwordField).toHaveCSS('border', '1px solid rgb(255, 0, 0)');
+});
+
+
+test('Admin login - with POM', async ({ loginPage }) => {
+  
+  expect(loginPage.loginHeaderText).toHaveText("Log into your account");
+  await loginPage.loginAdmin("admin", "password");
+  expect(loginPage.logoutNavbar).toBeVisible();
+
+});
+
 

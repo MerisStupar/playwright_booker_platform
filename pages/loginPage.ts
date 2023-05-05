@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { Page, expect } from "@playwright/test";
 
 
 export default class LoginPage{
@@ -9,6 +9,8 @@ export default class LoginPage{
     private usernameField = this.page.locator(`#username`);
     private passwordField = this.page.locator(`#password`);
     private loginButton = this.page.locator(`#doLogin`);
+
+    logoutNavbar = this.page.locator(`//a[contains(text(),'Logout')]`)
 
 
     async enterUsername(username: string){
@@ -27,6 +29,7 @@ export default class LoginPage{
         await this.enterUsername(username);
         await this.enterPassword(password);
         await this.clickLoginButton();
+        expect(this.logoutNavbar).toBeVisible();
     }
 
 

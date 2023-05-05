@@ -22,10 +22,14 @@ export default class RoomsPage{
 
     private createButton = this.page.locator(`#createRoom`);
 
+    private resultRoomID = this.page.locator(`#roomName`);
+     
+
 
 
     async enterRoomID(roomID: string){
         await this.roomID.type(roomID);
+        expect(this.resultRoomID).toHaveValue(roomID)
     }
 
     async selectRoomType(dataValue:string){

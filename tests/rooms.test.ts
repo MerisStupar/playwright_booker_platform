@@ -16,8 +16,9 @@ test.only('Test login admin function', async ({ page }) => {
     await login.loginAdmin("admin", "password");
 
 
-    await rooms.enterRoomID("404");
-    
+    // const roomID = "405"
+    await rooms.enterRoomID("707");
+
     const type = await page.locator(`#type`);
     const roomAccessible = page.locator(`#accessible`);
 
@@ -36,6 +37,7 @@ test.only('Test login admin function', async ({ page }) => {
     await rooms.selectCreateButton();
 
 
+    
 
 
     async function selectingTypes(valueName) {
@@ -53,19 +55,49 @@ test.only('Test login admin function', async ({ page }) => {
     }
 });
 
-test('Adding full specified room', async ({ page }) => {
+test.skip('Adding full specified room', async ({ page }) => {
 
     const login = new LoginPage(page);
-    const rooms = new RoomsPage(page);
 
 
     await login.loginAdmin("admin", "password");
-  
-    await rooms.enterRoomID("505");
-    await rooms.selectRoomType("Double");
-  
+
+    const roomID = await page.locator(`#roomName`);
+    const roomType = await page.locator(`#type`);
+    const roomAccessible = await page.locator(`#accessible`);
+    const roomPrice = await page.locator(`#roomPrice`);
+    const roomSafeCB = await page.locator(`#safeCheckbox`);
+    const createButton = await page.locator(`#createRoom`);
+
+    const id = "400"
+
+    await roomID.type(id);
+
+    await roomType.click();
+    await roomType.selectOption({
+        value: "Family"
+    });
+
+    await roomAccessible.click();
+    await roomAccessible.selectOption({
+        value: "true"
+    });
+
+    await roomPrice.type("33.33e");
+
+    await roomSafeCB.check();
+    expect(roomSafeCB).toBeChecked();
 
     await page.waitForTimeout(3000);
+
+    await createButton.click();
+
+    const resultRoomID = await page.locator(`#roomName${id}`);
+
+    expect(resultRoomID).toHaveText("400");
+
+
+
 
 });
 

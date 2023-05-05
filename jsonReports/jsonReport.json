@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "c:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\playwright.config.ts",
-    "rootDir": "c:/Users/ZIRA/Desktop/playwright_booker_platform",
+    "configFile": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\playwright.config.ts",
+    "rootDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform",
     "forbidOnly": false,
     "fullyParallel": false,
     "globalSetup": null,
@@ -37,12 +37,12 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "c:/Users/ZIRA/Desktop/playwright_booker_platform/test-results",
+        "outputDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "chrome",
         "name": "chrome",
-        "testDir": "c:/Users/ZIRA/Desktop/playwright_booker_platform",
+        "testDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
           "tests/rooms.test.ts"
@@ -64,8 +64,8 @@
       "line": 0,
       "specs": [
         {
-          "title": "Adding full specified room",
-          "ok": false,
+          "title": "Test login admin function",
+          "ok": true,
           "tags": [],
           "tests": [
             {
@@ -77,53 +77,34 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "failed",
-                  "duration": 4558,
-                  "error": {
-                    "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected string: \u001b[32m\"\u001b[7mDoubl\u001b[27me\"\u001b[39m\nReceived string: \u001b[31m\"\u001b[7mSingleTwinDoubleFamilySuit\u001b[27me\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toHaveText with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#type')\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n",
-                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected string: \u001b[32m\"\u001b[7mDoubl\u001b[27me\"\u001b[39m\nReceived string: \u001b[31m\"\u001b[7mSingleTwinDoubleFamilySuit\u001b[27me\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toHaveText with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#type')\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\n    at RoomsPage.selectRoomType (c:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\pages\\roomsPage.ts:36:29)\n    at c:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\tests\\rooms.test.ts:65:5",
-                    "snippet": "\u001b[90m   at \u001b[39mpages\\roomsPage.ts:36\n\n  34 |         value: dataValue\n  35 |       })\n> 36 |       expect(this.roomType).toHaveText(dataValue)\n     |                             ^\n  37 |     }\n  38 |\n  39 |     async selectRoomAccessible(){"
-                  },
-                  "errors": [
-                    {
-                      "location": {
-                        "file": "c:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\pages\\roomsPage.ts",
-                        "column": 29,
-                        "line": 36
-                      },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected string: \u001b[32m\"\u001b[7mDoubl\u001b[27me\"\u001b[39m\nReceived string: \u001b[31m\"\u001b[7mSingleTwinDoubleFamilySuit\u001b[27me\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toHaveText with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#type')\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\u001b[2m  -   locator resolved to <select id=\"type\" class=\"form-control\">…</select>\u001b[22m\n\u001b[2m  -   unexpected value \"SingleTwinDoubleFamilySuite\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39mpages\\roomsPage.ts:36\n\n  34 |         value: dataValue\n  35 |       })\n> 36 |       expect(this.roomType).toHaveText(dataValue)\n     |                             ^\n  37 |     }\n  38 |\n  39 |     async selectRoomAccessible(){\n\n\u001b[2m    at RoomsPage.selectRoomType (c:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\pages\\roomsPage.ts:36:29)\u001b[22m\n\u001b[2m    at c:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\tests\\rooms.test.ts:65:5\u001b[22m"
-                    }
-                  ],
+                  "status": "passed",
+                  "duration": 5771,
+                  "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-04T17:47:38.561Z",
+                  "startTime": "2023-05-05T10:35:06.721Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "c:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Adding-full-specified-room-chrome\\video.webm"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Test-login-admin-function-chrome\\video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "c:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Adding-full-specified-room-chrome\\test-failed-1.png"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Test-login-admin-function-chrome\\test-finished-1.png"
                     }
-                  ],
-                  "errorLocation": {
-                    "file": "c:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\pages\\roomsPage.ts",
-                    "column": 29,
-                    "line": 36
-                  }
+                  ]
                 }
               ],
-              "status": "unexpected"
+              "status": "expected"
             }
           ],
-          "id": "841e33bd07809b12c892-1ef885de44435e2d5da8",
+          "id": "841e33bd07809b12c892-d118f1d4d450654012c9",
           "file": "tests/rooms.test.ts",
-          "line": 56,
-          "column": 5
+          "line": 11,
+          "column": 6
         }
       ]
     }

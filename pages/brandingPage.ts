@@ -22,6 +22,9 @@ export default class BrandingPage{
     submitButton = this.page.locator(`#updateBranding`);
 
 
+    modalPopup = this.page.locator(`div[role='dialog']`);
+
+
     async enterName(name:string){
         await this.nameField.type(name);
     }

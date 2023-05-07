@@ -45,7 +45,7 @@
         "testDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
-          "tests/rooms.test.ts"
+          "tests/branding.test.ts"
         ],
         "timeout": 30000
       }
@@ -53,19 +53,19 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.33.0",
-    "workers": 4,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
     {
-      "title": "tests\\rooms.test.ts",
-      "file": "tests/rooms.test.ts",
+      "title": "tests\\branding.test.ts",
+      "file": "tests/branding.test.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Creating room with empty data",
-          "ok": true,
+          "title": "Change description in branding",
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -77,257 +77,52 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 2865,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-07T20:33:20.473Z",
-                  "attachments": [
+                  "status": "failed",
+                  "duration": 7649,
+                  "error": {
+                    "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected string: \u001b[32m\"Branding updated!\"\u001b[39m\nReceived string: \u001b[31m\"\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toContainText with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\\'dialog\\']')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected string: \u001b[32m\"Branding updated!\"\u001b[39m\nReceived string: \u001b[31m\"\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toContainText with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\\'dialog\\']')\u001b[22m\n\n    at C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\tests\\branding.test.ts:23:37",
+                    "snippet": "\u001b[0m \u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m3000\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m brandingPage\u001b[33m.\u001b[39mmodalPopup\u001b[33m.\u001b[39misVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m     expect(brandingPage\u001b[33m.\u001b[39mmodalPopup)\u001b[33m.\u001b[39mtoContainText(\u001b[32m\"Branding updated!\"\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 25 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
                     {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Creating-room-with-empty-data-chrome\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Creating-room-with-empty-data-chrome\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "841e33bd07809b12c892-ac8b05c3cde500e4a3e8",
-          "file": "tests/rooms.test.ts",
-          "line": 10,
-          "column": 5
-        },
-        {
-          "title": "Creating room with only ID",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chrome",
-              "projectName": "chrome",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "status": "passed",
-                  "duration": 3255,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-07T20:33:20.460Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Creating-room-with-only-ID-chrome\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Creating-room-with-only-ID-chrome\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "841e33bd07809b12c892-b3015bd6098f919ef699",
-          "file": "tests/rooms.test.ts",
-          "line": 17,
-          "column": 5
-        },
-        {
-          "title": "Creating room with only price",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chrome",
-              "projectName": "chrome",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "status": "passed",
-                  "duration": 3186,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-07T20:33:20.464Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Creating-room-with-only-price-chrome\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Creating-room-with-only-price-chrome\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "841e33bd07809b12c892-13c93fc9ce989f315f74",
-          "file": "tests/rooms.test.ts",
-          "line": 24,
-          "column": 5
-        },
-        {
-          "title": "Creating room - without POM ",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chrome",
-              "projectName": "chrome",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "status": "passed",
-                  "duration": 3902,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-07T20:33:20.482Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Creating-room---without-POM--chrome\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Creating-room---without-POM--chrome\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "841e33bd07809b12c892-976e4df90ad8b8018f7c",
-          "file": "tests/rooms.test.ts",
-          "line": 32,
-          "column": 5
-        },
-        {
-          "title": "Adding full specified room - with POM",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chrome",
-              "projectName": "chrome",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 2458,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-07T20:33:24.561Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Adding-full-specified-room---with-POM-chrome\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Adding-full-specified-room---with-POM-chrome\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "841e33bd07809b12c892-1e5f81d25d74f47cd20c",
-          "file": "tests/rooms.test.ts",
-          "line": 44,
-          "column": 5
-        },
-        {
-          "title": "Adding full specified room - and validate on the user side if room was visible",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chrome",
-              "projectName": "chrome",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "status": "passed",
-                  "duration": 3988,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "Family\n"
+                      "location": {
+                        "file": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\tests\\branding.test.ts",
+                        "column": 37,
+                        "line": 23
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected string: \u001b[32m\"Branding updated!\"\u001b[39m\nReceived string: \u001b[31m\"\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toContainText with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\\'dialog\\']')\u001b[22m\n\n\n\u001b[0m \u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m3000\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m brandingPage\u001b[33m.\u001b[39mmodalPopup\u001b[33m.\u001b[39misVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m     expect(brandingPage\u001b[33m.\u001b[39mmodalPopup)\u001b[33m.\u001b[39mtoContainText(\u001b[32m\"Branding updated!\"\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 25 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\tests\\branding.test.ts:23:37\u001b[22m"
                     }
                   ],
+                  "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-07T20:33:24.933Z",
+                  "startTime": "2023-05-07T21:05:35.056Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Adding-full-specified-room---and-validate-on-the-user-side-if-room-was-visible-chrome\\video.webm"
+                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-description-in-branding-chrome\\video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Adding-full-specified-room---and-validate-on-the-user-side-if-room-was-visible-chrome\\test-finished-1.png"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Adding-full-specified-room---and-validate-on-the-user-side-if-room-was-visible-chrome\\test-finished-2.png"
+                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-description-in-branding-chrome\\test-failed-1.png"
                     }
-                  ]
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\tests\\branding.test.ts",
+                    "column": 37,
+                    "line": 23
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
-          "id": "841e33bd07809b12c892-823c8b224bcde63ea8b2",
-          "file": "tests/rooms.test.ts",
-          "line": 53,
+          "id": "da7245064ca711f00a6c-9cb22ec190ab29665ead",
+          "file": "tests/branding.test.ts",
+          "line": 14,
           "column": 5
         }
       ]

@@ -24,13 +24,23 @@ export default class RoomsPage {
   private createButton = this.page.locator(`#createRoom`);
 
 
+
+  //Alert message 
+  private alertMessage = this.page.locator(`div.alert.alert-danger`);
+
+
+  async validateAlertMessageEmptyData(expectedText:string){
+    await this.alertMessage.scrollIntoViewIfNeeded();
+    expect(this.alertMessage).toHaveText(expectedText);
+  }
+
   async expectedDetails(){
 
     const expectedDetails = "WiFiTVRadioRefreshmentsSafeViews";
     const details = this.page.locator("(//div[@class='col-sm-5'])").last();
     const textContext = await details.textContent();
-
-    expect(textContext).toContain(expectedDetails)
+    expect(textContext).toContain(expectedDetails);
+    
   }
  
   async enterRoomID(roomID: string) {

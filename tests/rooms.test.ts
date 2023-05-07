@@ -4,15 +4,33 @@ import * as data from '../data-test/roomData.json';
 // import LoginPage from "../pages/loginPage";
 // import RoomsPage from "../pages/roomsPage";
 
-test.beforeEach(async ({ page, baseURL }) => {
+test.beforeEach(async ({ page, baseURL, loginPage }) => {
     await page.goto(`${baseURL}/#/admin`);
+    await loginPage.loginAdmin(process.env.USERNAM_OF_ADMIN!, process.env.PASSWORD_OF_ADMIN!);
 });
 
 
-test('Creating room - without POM ', async ({loginPage, roomsPage }) => {
+test('Creating room with empty data', async ({ roomsPage }) => {
+
+    await roomsPage.selectCreateButton();
+    await roomsPage.validateAlertMessageEmptyData("Room name must be setmust be greater than or equal to 1");
+    
+});
+
+test('Creating room with only ID', async ({ roomsPage }) => {
+    await roomsPage.enterRoomID(data.roomID);
+    await roomsPage.selectCreateButton();
+    await roomsPage.validateAlertMessageEmptyData("must be greater than or equal to 1");
+});
+
+test('Creating room with only price', async ({ roomsPage }) => {
+    await roomsPage.enterRoomPrice(data.roomPrice);
+    await roomsPage.selectCreateButton();
+    await roomsPage.validateAlertMessageEmptyData("Room name must be set");
+});
 
 
-    await loginPage.loginAdmin(process.env.USERNAM_OF_ADMIN!, process.env.PASSWORD_OF_ADMIN!);
+test('Creating room - without POM ', async ({roomsPage }) => {
 
     await roomsPage.enterRoomID(data.roomID);
     await roomsPage.selectRoomType(data.roomType);
@@ -23,12 +41,9 @@ test('Creating room - without POM ', async ({loginPage, roomsPage }) => {
 });
 
 
-test.only('Adding full specified room - with POM', async ({loginPage, roomsPage, page }) => {
+test('Adding full specified room - with POM', async ({roomsPage, page }) => {
 
    /*  const expectedDetails = "WiFiTVRadioRefreshmentsSafeViews"; */
-
-    await loginPage.loginAdmin(process.env.USERNAM_OF_ADMIN!, process.env.PASSWORD_OF_ADMIN!);
-
     await roomsPage.addingFullRoom(data.roomID, data.roomType, data.roomAccessible, data.roomPrice);
     await page.waitForTimeout(2000);
     await roomsPage.expectedDetails();
@@ -37,6 +52,9 @@ test.only('Adding full specified room - with POM', async ({loginPage, roomsPage,
     const textContent = await details.textContent();
     expect(textContent).toContain(expectedDetails) */
 });
+
+
+
 
 
 

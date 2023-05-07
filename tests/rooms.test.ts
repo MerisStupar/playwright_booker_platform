@@ -9,7 +9,7 @@ test.beforeEach(async ({ page, baseURL }) => {
 });
 
 
-test('Creating room', async ({ page, loginPage, roomsPage }) => {
+test('Creating room', async ({loginPage, roomsPage }) => {
 
 
     await loginPage.loginAdmin("admin", "password");
@@ -24,11 +24,11 @@ test('Creating room', async ({ page, loginPage, roomsPage }) => {
     await roomsPage.selectTV();
 });
 
-test.only('Adding full specified room', async ({ page, loginPage, roomsPage }) => {
+test.only('Adding full specified room', async ({loginPage, roomsPage }) => {
 
     await loginPage.loginAdmin("admin", "password");
-    await roomsPage.addingFullRoom(data.roomID, data.roomType, data.roomAccessible, data.roomPrice);
 
+    await roomsPage.addingFullRoom(data.roomID, data.roomType, data.roomAccessible, data.roomPrice);
 });
 
 

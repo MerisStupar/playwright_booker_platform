@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/MerisStupar/playwright_booker_platform#readme",
   "devDependencies": {
-    "@playwright/test": "^1.33.0"
+    "@playwright/test": "^1.33.0",
+    "dotenv": "^16.0.3"
   }
 }

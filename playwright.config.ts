@@ -32,6 +32,7 @@ const config: PlaywrightTestConfig = {
         
     },
     
+    fullyParallel: true,
     retries: 0,
 
     reporter: [

@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\playwright.config.ts",
-    "rootDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform",
+    "configFile": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\playwright.config.ts",
+    "rootDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
     "forbidOnly": false,
     "fullyParallel": false,
     "globalSetup": null,
@@ -37,15 +37,15 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform/test-results",
+        "outputDir": "C:/Users/Meris/Desktop/playwright_booker_platform/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "chrome",
         "name": "chrome",
-        "testDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform",
+        "testDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
-          "tests/login.test.ts"
+          "tests/rooms.test.ts"
         ],
         "timeout": 30000
       }
@@ -58,13 +58,13 @@
   },
   "suites": [
     {
-      "title": "tests\\login.test.ts",
-      "file": "tests/login.test.ts",
+      "title": "tests\\rooms.test.ts",
+      "file": "tests/rooms.test.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Admin login - basic test",
+          "title": "Adding full specified room",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,22 +78,22 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 4790,
+                  "duration": 1992,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-05T14:21:13.117Z",
+                  "startTime": "2023-05-07T09:58:22.315Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-Admin-login---basic-test-chrome\\video.webm"
+                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Adding-full-specified-room-chrome\\video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-Admin-login---basic-test-chrome\\test-finished-1.png"
+                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Adding-full-specified-room-chrome\\test-finished-1.png"
                     }
                   ]
                 }
@@ -101,182 +101,10 @@
               "status": "expected"
             }
           ],
-          "id": "ef85df6096d4739f2c52-ef8ba7315f9c86790fff",
-          "file": "tests/login.test.ts",
-          "line": 9,
-          "column": 5
-        },
-        {
-          "title": "Passing empty data - Login",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chrome",
-              "projectName": "chrome",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 1435,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-05T14:21:18.307Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-Passing-empty-data---Login-chrome\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-Passing-empty-data---Login-chrome\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "ef85df6096d4739f2c52-f5c8c90668abf64661b5",
-          "file": "tests/login.test.ts",
-          "line": 29,
-          "column": 5
-        },
-        {
-          "title": "Passing only username - Login",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chrome",
-              "projectName": "chrome",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 1407,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-05T14:21:19.744Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-Passing-only-username---Login-chrome\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-Passing-only-username---Login-chrome\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "ef85df6096d4739f2c52-03e57b96185e0a9789e0",
-          "file": "tests/login.test.ts",
-          "line": 38,
-          "column": 5
-        },
-        {
-          "title": "Passing only password - Login",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chrome",
-              "projectName": "chrome",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 1447,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-05T14:21:21.152Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-Passing-only-password---Login-chrome\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-Passing-only-password---Login-chrome\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "ef85df6096d4739f2c52-898a00b1400ed54c3091",
-          "file": "tests/login.test.ts",
-          "line": 45,
-          "column": 5
-        },
-        {
-          "title": "Admin login - with POM",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chrome",
-              "projectName": "chrome",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 1125,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-05T14:21:22.600Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-Admin-login---with-POM-chrome\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-login-Admin-login---with-POM-chrome\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "ef85df6096d4739f2c52-2b58c0a479521d069586",
-          "file": "tests/login.test.ts",
-          "line": 53,
-          "column": 5
+          "id": "841e33bd07809b12c892-1ef885de44435e2d5da8",
+          "file": "tests/rooms.test.ts",
+          "line": 27,
+          "column": 6
         }
       ]
     }

@@ -28,7 +28,6 @@ export default class RoomsPage {
 
   async enterRoomID(roomID: string) {
     await this.roomID.type(roomID);
-
     expect(this.resultRoomID).toHaveValue(roomID);
   }
 
@@ -46,7 +45,6 @@ export default class RoomsPage {
     await this.roomAccessible.selectOption({
         value: dataValue
     });
-    
     expect(this.roomAccessible).toHaveValue(dataValue)
   }
 
@@ -87,38 +85,44 @@ export default class RoomsPage {
     await this.createButton.click();
   }
 
-  public async addingFullRoom(
-    roomID: string,
-    typeValue: string,
-    accessible: string,
+  //Function to add all CB
+  private async addRoomDetails() {
+    await this.selectWiFi();
+    expect(this.roomWifiCB).toBeChecked();
+  
+    await this.selectTV();
+    expect(this.roomTVCB).toBeChecked();
+  
+    await this.selectViews();
+    expect(this.roomViewsCB).toBeChecked();
+  
+    await this.selectRefreshments();
+    expect(this.roomRefreshmentsCB).toBeChecked();
+  
+    await this.selectSafe();
+    expect(this.roomSafeCB).toBeChecked();
+  
+    await this.selectRadio();
+    expect(this.roomRadioCB).toBeChecked();
+  }
+
+
+  //Adding full specified room
+  public async addingFullRoom( roomID: string, typeValue: string, accessible: string,
     roomPrice: string
   ) {
     //Adding number of room
-    await this.roomID.type(roomID);
+    await this.enterRoomID(roomID);
     //Adding type of room
-    await this.roomType.click();
-    await this.roomType.selectOption({
-      value: typeValue,
-    });
-
+    await this.selectRoomType(typeValue);
     //Adding accessible
-    await this.roomAccessible.click();
-    await this.roomAccessible.selectOption({
-      value: accessible,
-    });
-
+    await this.selectRoomAccessible(accessible);
     //Adding price
-    await this.roomPrice.type(roomPrice);
-
-    //Adding room details
-    await this.selectWiFi();
-    await this.selectTV();
-    await this.selectViews();
-    await this.selectRefreshments();
-    await this.selectSafe();
-    await this.selectRadio();
-
+    await this.enterRoomPrice(roomPrice);
+    //Addin all room details all CB
+    await this.addRoomDetails();
     //Create room - clicking the button create
     await this.selectCreateButton();
   }
+
 }

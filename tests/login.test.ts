@@ -50,10 +50,11 @@ test('Passing only password - Login', async ({ loginPage }) => {
 });
 
 
-test('Admin login - with POM', async ({ loginPage }) => {
+test('Admin login - with POM', async ({ loginPage, page }) => {
   
   expect(loginPage.loginHeaderText).toHaveText("Log into your account");
   await loginPage.loginAdmin("admin", "password");
+  await page.waitForTimeout(4000);
   expect(loginPage.logoutNavbar).toBeVisible();
 
 });

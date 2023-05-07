@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test";
-
+import * as data from '../data-test/roomData.json';
 
 
 export default class RoomsPage {
@@ -23,12 +23,19 @@ export default class RoomsPage {
   //Button to create room
   private createButton = this.page.locator(`#createRoom`);
 
-  //Reslut of data for room - to assert it
-  private resultRoomID = this.page.locator(`#roomName`);
 
+  async expectedDetails(){
+
+    const expectedDetails = "WiFiTVRadioRefreshmentsSafeViews";
+    const details = this.page.locator("(//div[@class='col-sm-5'])").last();
+    const textContext = await details.textContent();
+
+    expect(textContext).toContain(expectedDetails)
+  }
+ 
   async enterRoomID(roomID: string) {
     await this.roomID.type(roomID);
-    expect(this.resultRoomID).toHaveValue(roomID);
+    expect(this.roomID).toHaveValue(data.roomID);
   }
 
   async selectRoomType(dataValue: string) {

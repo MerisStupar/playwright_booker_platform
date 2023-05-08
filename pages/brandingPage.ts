@@ -23,7 +23,7 @@ export default class BrandingPage{
 
 
     modalPopup = this.page.locator(`div[role='dialog']`);
-
+    modalText = this.page.locator(`div.col-12>p `);
 
     async enterName(name:string){
         await this.nameField.type(name);

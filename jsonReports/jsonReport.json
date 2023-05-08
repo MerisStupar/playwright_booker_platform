@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\playwright.config.ts",
-    "rootDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
+    "configFile": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\playwright.config.ts",
+    "rootDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -37,12 +37,12 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Users/Meris/Desktop/playwright_booker_platform/test-results",
+        "outputDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "chrome",
         "name": "chrome",
-        "testDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
+        "testDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
           "tests/branding.test.ts"
@@ -64,8 +64,8 @@
       "line": 0,
       "specs": [
         {
-          "title": "Change description in branding",
-          "ok": false,
+          "title": "Test",
+          "ok": true,
           "tags": [],
           "tests": [
             {
@@ -77,53 +77,38 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "failed",
-                  "duration": 7649,
-                  "error": {
-                    "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected string: \u001b[32m\"Branding updated!\"\u001b[39m\nReceived string: \u001b[31m\"\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toContainText with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\\'dialog\\']')\u001b[22m\n",
-                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected string: \u001b[32m\"Branding updated!\"\u001b[39m\nReceived string: \u001b[31m\"\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toContainText with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\\'dialog\\']')\u001b[22m\n\n    at C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\tests\\branding.test.ts:23:37",
-                    "snippet": "\u001b[0m \u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m3000\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m brandingPage\u001b[33m.\u001b[39mmodalPopup\u001b[33m.\u001b[39misVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m     expect(brandingPage\u001b[33m.\u001b[39mmodalPopup)\u001b[33m.\u001b[39mtoContainText(\u001b[32m\"Branding updated!\"\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 25 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m\u001b[0m"
-                  },
-                  "errors": [
+                  "status": "passed",
+                  "duration": 4756,
+                  "errors": [],
+                  "stdout": [
                     {
-                      "location": {
-                        "file": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\tests\\branding.test.ts",
-                        "column": 37,
-                        "line": 23
-                      },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected string: \u001b[32m\"Branding updated!\"\u001b[39m\nReceived string: \u001b[31m\"\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toContainText with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div[role=\\'dialog\\']')\u001b[22m\n\n\n\u001b[0m \u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m3000\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m brandingPage\u001b[33m.\u001b[39mmodalPopup\u001b[33m.\u001b[39misVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 23 |\u001b[39m     expect(brandingPage\u001b[33m.\u001b[39mmodalPopup)\u001b[33m.\u001b[39mtoContainText(\u001b[32m\"Branding updated!\"\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 25 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m\u001b[0m\n\n\u001b[2m    at C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\tests\\branding.test.ts:23:37\u001b[22m"
+                      "text": "Branding updated!\n"
                     }
                   ],
-                  "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-07T21:05:35.056Z",
+                  "startTime": "2023-05-08T08:15:01.758Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-description-in-branding-chrome\\video.webm"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Test-chrome\\video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-description-in-branding-chrome\\test-failed-1.png"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Test-chrome\\test-finished-1.png"
                     }
-                  ],
-                  "errorLocation": {
-                    "file": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\tests\\branding.test.ts",
-                    "column": 37,
-                    "line": 23
-                  }
+                  ]
                 }
               ],
-              "status": "unexpected"
+              "status": "expected"
             }
           ],
-          "id": "da7245064ca711f00a6c-9cb22ec190ab29665ead",
+          "id": "da7245064ca711f00a6c-58c523d9e6865e281c39",
           "file": "tests/branding.test.ts",
-          "line": 14,
-          "column": 5
+          "line": 33,
+          "column": 6
         }
       ]
     }

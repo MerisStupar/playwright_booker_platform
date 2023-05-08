@@ -78,7 +78,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 6333,
+                  "duration": 5813,
                   "errors": [],
                   "stdout": [
                     {
@@ -87,7 +87,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-08T14:41:55.747Z",
+                  "startTime": "2023-05-08T14:58:20.557Z",
                   "attachments": [
                     {
                       "name": "video",

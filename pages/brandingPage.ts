@@ -63,6 +63,9 @@ export default class BrandingPage{
     }
 
     async changeDesc(){
+        
+        const descriptionSlector = 'textarea#description';
+        await this.page.waitForSelector(descriptionSlector);
 
         await this.descriptionField.clear();
         return;

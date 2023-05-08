@@ -66,9 +66,8 @@ test('Branding updating - description updating', async ({ page, brandingPage }) 
 
 
 test.only('Test - with POM', async ({ page, brandingPage }) => {
- 
-    await page.waitForTimeout(1000);
-    await page.waitForSelector('textarea#description')
+
+    await page.waitForTimeout(500); 
     await brandingPage.changeDesc();
    
     await page.waitForTimeout(4000);

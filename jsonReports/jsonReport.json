@@ -64,7 +64,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "Branding updating - description updating",
+          "title": "Test - with POM",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,29 +78,26 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 11736,
+                  "duration": 6333,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "Branding updated!\n"
-                    },
-                    {
-                      "text": "Hello World New description\n"
+                      "text": "The description field is empty.\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-08T11:10:00.706Z",
+                  "startTime": "2023-05-08T14:41:55.747Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Branding-updating---description-updating-chrome\\video.webm"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Test---with-POM-chrome\\video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Branding-updating---description-updating-chrome\\test-finished-1.png"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Test---with-POM-chrome\\test-finished-1.png"
                     }
                   ]
                 }
@@ -108,9 +105,9 @@
               "status": "expected"
             }
           ],
-          "id": "da7245064ca711f00a6c-a90fac0b5f606481d7fe",
+          "id": "da7245064ca711f00a6c-d22517b0eb4ce6e6d3f7",
           "file": "tests/branding.test.ts",
-          "line": 32,
+          "line": 68,
           "column": 6
         }
       ]

@@ -29,9 +29,10 @@ test('Change description in branding', async ({ brandingPage, page }) => {
 });
 
 
-test.only('Branding updating - description updating', async ({ page, brandingPage }) => {
-
+test('Branding updating - description updating', async ({ page, brandingPage }) => {
+    await page.waitForTimeout(3000);
     await brandingPage.changeDesc();
+    // await page.waitForTimeout(3000);
     // await brandingPage.descriptionField.clear()
     await brandingPage.descriptionField.fill(data.description);
     await page.waitForTimeout(3000);
@@ -58,8 +59,25 @@ test.only('Branding updating - description updating', async ({ page, brandingPag
 
     await expect(textDesc).toContain(data.description);
 
-    console.log(textDesc);
+    console.log("This is new description: " + textDesc);
 
     await page.waitForTimeout(4000);
 });
+
+
+test.only('Test - with POM', async ({ page, brandingPage }) => {
+ 
+    await page.waitForTimeout(1000);
+    await page.waitForSelector('textarea#description')
+    await brandingPage.changeDesc();
+   
+    await page.waitForTimeout(4000);
+    const descriptionFieldValue = await brandingPage.descriptionField.inputValue();
+    if (descriptionFieldValue === '') {
+        console.log('The description field is empty.');
+    } else {
+        console.log('The description field is not empty.');
+    }
+}); 
+
 

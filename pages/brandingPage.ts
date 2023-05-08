@@ -63,9 +63,12 @@ export default class BrandingPage{
     }
 
     async changeDesc(){
+
         await this.descriptionField.clear();
         return;
     }
+
+   
 
 
 }

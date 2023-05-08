@@ -4,7 +4,7 @@ import * as data from '../data-test/roomData.json';
 
 export default class RoomsPage {
     
-  constructor(public page: Page) {}
+  constructor(public page:Page) {}
 
   //Room's fields and dropdowns
   private roomID = this.page.locator(`#roomName`);

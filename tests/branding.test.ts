@@ -1,5 +1,4 @@
-import { expect } from "@playwright/test";
-import { test } from "../baseFixture/baseFixture";
+import { expect, test } from "../baseFixture/baseFixture";
 import * as data from "../data-test/brandingData.json";
 
 
@@ -30,12 +29,12 @@ test('Change description in branding', async ({ brandingPage, page }) => {
 });
 
 
-test.only('Test', async ({ page,brandingPage }) => {
+test.only('Branding updating - description updating', async ({ page, brandingPage }) => {
 
-    await brandingPage.descriptionField.click({clickCount: 3});
-    await brandingPage.descriptionField.press('Backspace');
-
+    await brandingPage.changeDesc();
+    // await brandingPage.descriptionField.clear()
     await brandingPage.descriptionField.fill(data.description);
+    await page.waitForTimeout(3000);
     expect(brandingPage.descriptionField).toHaveValue(data.description);
 
     await brandingPage.submitButton.click();
@@ -50,5 +49,17 @@ test.only('Test', async ({ page,brandingPage }) => {
 
     console.log(textContext);
 
-     expect(textContext).toContain(expectedText)
+    await expect(textContext).toContain(expectedText);
+
+    await brandingPage.modalButton.click();
+
+
+    const textDesc = await brandingPage.descriptionField.textContent();
+
+    await expect(textDesc).toContain(data.description);
+
+    console.log(textDesc);
+
+    await page.waitForTimeout(4000);
 });
+

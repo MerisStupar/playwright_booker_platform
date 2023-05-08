@@ -1,5 +1,5 @@
-import { Page } from "@playwright/test";
-
+import { Page, expect } from "@playwright/test";
+import * as data from "../data-test/brandingData.json";
 
 export default class BrandingPage{
 
@@ -8,7 +8,7 @@ export default class BrandingPage{
     //B&B details locators
     nameField = this.page.locator(`#name`);
     logoField = this.page.locator(`#logoUrl`);
-    descriptionField = this.page.locator(`#description`);
+    descriptionField = this.page.locator(`textarea#description`);
 
     //Map details locatos
     latitudeField = this.page.locator(`#latitude`);
@@ -24,6 +24,7 @@ export default class BrandingPage{
 
     modalPopup = this.page.locator(`div[role='dialog']`);
     modalText = this.page.locator(`div.col-12>p `);
+    modalButton = this.page.locator(`.col-12 button`);
 
     async enterName(name:string){
         await this.nameField.type(name);
@@ -60,6 +61,12 @@ export default class BrandingPage{
     async enterEmail(email:string){
         await this.contactEmailField.type(email);
     }
+
+    async changeDesc(){
+        await this.descriptionField.clear();
+        return;
+    }
+
 
 }
 

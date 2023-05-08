@@ -64,7 +64,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "Test",
+          "title": "Branding updating - description updating",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,26 +78,29 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 4756,
+                  "duration": 11736,
                   "errors": [],
                   "stdout": [
                     {
                       "text": "Branding updated!\n"
+                    },
+                    {
+                      "text": "Hello World New description\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-08T08:15:01.758Z",
+                  "startTime": "2023-05-08T11:10:00.706Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Test-chrome\\video.webm"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Branding-updating---description-updating-chrome\\video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Test-chrome\\test-finished-1.png"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Branding-updating---description-updating-chrome\\test-finished-1.png"
                     }
                   ]
                 }
@@ -105,9 +108,9 @@
               "status": "expected"
             }
           ],
-          "id": "da7245064ca711f00a6c-58c523d9e6865e281c39",
+          "id": "da7245064ca711f00a6c-a90fac0b5f606481d7fe",
           "file": "tests/branding.test.ts",
-          "line": 33,
+          "line": 32,
           "column": 6
         }
       ]

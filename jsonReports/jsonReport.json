@@ -78,16 +78,16 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 3710,
+                  "duration": 3470,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": " New contact address\n"
+                      "text": " New contact address 222222\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-09T15:14:53.048Z",
+                  "startTime": "2023-05-09T15:16:23.280Z",
                   "attachments": [
                     {
                       "name": "video",

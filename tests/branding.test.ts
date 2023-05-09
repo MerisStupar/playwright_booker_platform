@@ -106,10 +106,9 @@ test.only('Change Contact details - then validate on front page', async ({ page,
     await brandingPage.submitBtn();
     await newPage.goto(`${baseURL}`);
 
-    const contactName = await newPage.locator(`.col-sm-5 > p:nth-of-type(2)`);
-    const text = await contactName.textContent();
+    const contactName = await newPage.locator(`.col-sm-5 > p:nth-of-type(2)`).textContent();
 
-    console.log(text);
+    console.log(contactName);
 
 
 });

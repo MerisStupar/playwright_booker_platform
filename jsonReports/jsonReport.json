@@ -64,7 +64,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "Change Contact details - then validate on front page",
+          "title": "test",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,31 +78,27 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 3470,
+                  "duration": 3184,
                   "errors": [],
-                  "stdout": [
-                    {
-                      "text": " New contact address 222222\n"
-                    }
-                  ],
+                  "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-09T15:16:23.280Z",
+                  "startTime": "2023-05-09T18:19:32.218Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-Contact-details---then-validate-on-front-page-chrome\\video.webm"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-test-chrome\\video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-Contact-details---then-validate-on-front-page-chrome\\test-finished-1.png"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-test-chrome\\test-finished-1.png"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-Contact-details---then-validate-on-front-page-chrome\\test-finished-2.png"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-test-chrome\\test-finished-2.png"
                     }
                   ]
                 }
@@ -110,9 +106,9 @@
               "status": "expected"
             }
           ],
-          "id": "da7245064ca711f00a6c-a8425e985d4e738cafe6",
+          "id": "da7245064ca711f00a6c-0a5da03aed8bec154683",
           "file": "tests/branding.test.ts",
-          "line": 100,
+          "line": 127,
           "column": 6
         }
       ]

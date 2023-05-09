@@ -1,6 +1,7 @@
 import { chromium } from "@playwright/test";
 import { expect, test } from "../baseFixture/baseFixture";
 import * as data from "../data-test/brandingData.json";
+import { ECDH } from "crypto";
 
 
 async function launchBrowser() {
@@ -97,20 +98,44 @@ test('Change B&B description in branding - then validate on front page', async (
 
 
 
-test.only('Change Contact details - then validate on front page', async ({ page, brandingPage, baseURL  }) => {
+test('Change Contact details - then validate on front page', async ({brandingPage, baseURL }) => {
 
      //This is from function for reusing the newPage in other tests if needed
     const {page: newPage} = await launchBrowser();
 
     await brandingPage.changeContactDetails();
-    await brandingPage.submitBtn();
     await newPage.goto(`${baseURL}`);
 
-    const contactName = await newPage.locator(`.col-sm-5 > p:nth-of-type(2)`).textContent();
+    const contactName = await newPage.locator(`.col-sm-5 > p:nth-of-type(1)`).textContent();
+    const contactAdress = await newPage.locator(`.col-sm-5 > p:nth-of-type(2)`).textContent();
+    const contactNumber = await newPage.locator(`.col-sm-5 > p:nth-of-type(3)`).textContent();
+    const contactEmail = await newPage.locator(`.col-sm-5 > p:nth-of-type(4)`).textContent();
 
-    console.log(contactName);
+
+    expect(contactName).toContain(data.contactName);
+    expect(contactAdress).toContain(data.contactAddress);
+    expect(contactNumber).toContain(data.contactPhone);
+    expect(contactEmail).toContain(data.contactEmail);
+
+
+    console.log(`This is new contact name: ${contactName}`);
 
 
 });
+
+
+test.only('test', async ({ page, clientPage, baseURL, brandingPage }) => {
+
+
+    const {page: newPage} = await clientPage.launchBrowser();
+   
+    await brandingPage.changeContactDetails();
+    await newPage.goto(`${baseURL}`);
+
+
+});
+
+
+
 
 

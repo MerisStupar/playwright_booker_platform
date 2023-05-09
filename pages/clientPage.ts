@@ -1,4 +1,5 @@
 import { Page, expect } from "@playwright/test";
+import { chromium } from "@playwright/test";
 import * as data from '../data-test/roomData.json';
 
 export default class ClientPage{
@@ -22,17 +23,22 @@ export default class ClientPage{
 
     //General selectors 
     brandingDescription = this.page.locator(`.col-sm-10 > p`);
-
-
-
-
+    
+    contactName =  this.page.locator(`.col-sm-5 > p:nth-of-type(1)`).textContent
 
     async validateTitleRoom(){
+        
         const textContext = await this.titleRoom.textContent()
         expect(this.titleRoom).toBeVisible();
         expect(textContext).toContain(data.roomType);
     }
     
 
+    async  launchBrowser() {
+        const browser = await chromium.launch();
+        const context = await browser.newContext();
+        const page = await context.newPage();
+        return { browser, context, page };
+    }
     
 }

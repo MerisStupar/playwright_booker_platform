@@ -88,6 +88,8 @@ export default class BrandingPage{
         await this.contactEmailField.fill(data.contactEmail);
         expect(this.contactEmailField).toHaveValue(data.contactEmail);
 
+        await this.submitBtn();
+
     }
 
 

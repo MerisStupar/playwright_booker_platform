@@ -72,33 +72,19 @@ test('Branding updating - description updating', async ({ page, brandingPage }) 
 });
 
 
-test('Change description in branding - then validate on front page', async ({ page, brandingPage, baseURL }) => {
-
+test('Change B&B description in branding - then validate on front page', async ({ page, brandingPage, baseURL }) => {
     //This is from function for reusing the newPage in other tests if needed
     const {page: newPage} = await launchBrowser();
 
-   /*  const browser = await chromium.launch();
-    const newContext = await browser.newContext();
-    const newPage = await newContext.newPage(); */
-
     await page.waitForTimeout(500); 
     await brandingPage.enterDescription();
-    await page.waitForTimeout(4000);
-    const descriptionFieldValue = await brandingPage.descriptionField.inputValue();
-    if (descriptionFieldValue === '') {
-        console.log('The description field is empty.');
-    } else {
-        console.log(`The description is not empty!  Text value is: ${data.description}`);
-    }
-
-    await brandingPage.submitButton.click();
+    await brandingPage.validateDescriptionFrontPage();
+    await brandingPage.submitBtn();
     await brandingPage.validatePopupModal();
 
     
-    //NOVA STRANICA
-
+    //Opening new windows - to validate data on frontpage
     await newPage.goto(`${baseURL}`);
-    
     const descriptionFrontPage = await newPage.locator(`.col-sm-10 > p`);
     const textContext = await descriptionFrontPage.textContent();
 
@@ -106,10 +92,26 @@ test('Change description in branding - then validate on front page', async ({ pa
 
     await descriptionFrontPage.scrollIntoViewIfNeeded();
     await newPage.screenshot();
-    
     expect(textContext).toContain(data.description);
-
-
 }); 
+
+
+
+test.only('Change Contact details - then validate on front page', async ({ page, brandingPage, baseURL  }) => {
+
+     //This is from function for reusing the newPage in other tests if needed
+    const {page: newPage} = await launchBrowser();
+
+    await brandingPage.changeContactDetails();
+    await brandingPage.submitBtn();
+    await newPage.goto(`${baseURL}`);
+
+    const contactName = await newPage.locator(`.col-sm-5 > p:nth-of-type(2)`);
+    const text = await contactName.textContent();
+
+    console.log(text);
+
+
+});
 
 

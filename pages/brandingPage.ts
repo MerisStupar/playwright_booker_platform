@@ -26,6 +26,7 @@ export default class BrandingPage{
     modalText = this.page.locator(`div.col-12>p `);
     modalButton = this.page.locator(`.col-12 button`);
 
+
     async enterName(name:string){
         await this.nameField.type(name);
     }
@@ -64,6 +65,33 @@ export default class BrandingPage{
         await this.contactEmailField.type(email);
     }
 
+    async submitBtn(){
+        await this.submitButton.click();
+    }
+
+
+    async changeContactDetails(){
+        //Validate contactname field
+        await this.contactNameField.scrollIntoViewIfNeeded();
+        await this.contactNameField.fill(data.contactName);
+        expect(this.contactNameField).toHaveValue(data.contactName);
+
+        await this.contactAddressField.scrollIntoViewIfNeeded();
+        await this.contactAddressField.fill(data.contactAddress);
+        expect(this.contactAddressField).toHaveValue(data.contactAddress);
+
+        await this.contactPhoneField.scrollIntoViewIfNeeded();
+        await this.contactPhoneField.fill(data.contactPhone);
+        expect(this.contactPhoneField).toHaveValue(data.contactPhone);
+
+        await this.contactEmailField.scrollIntoViewIfNeeded();
+        await this.contactEmailField.fill(data.contactEmail);
+        expect(this.contactEmailField).toHaveValue(data.contactEmail);
+
+    }
+
+
+
     async validatePopupModal (){
         const expectedText = "Branding updated!";
         const textContext = await this.modalText.textContent();
@@ -71,6 +99,16 @@ export default class BrandingPage{
         await expect(this.modalPopup).toBeVisible();
         await expect(textContext).toContain(expectedText);
         await expect(this.modalButton).toBeVisible();
+
+    }
+
+    async validateDescriptionFrontPage(){
+        const descriptionFieldValue = await this.descriptionField.inputValue();
+        if (descriptionFieldValue === '') {
+            console.log('The description field is empty.');
+        } else {
+            console.log(`The description is not empty!  Text value is: ${data.description}`);
+        }
     }
 
    

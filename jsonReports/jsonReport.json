@@ -53,7 +53,7 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.33.0",
-    "workers": 3,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
@@ -64,7 +64,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "Change description in branding",
+          "title": "Change Contact details - then validate on front page",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,72 +78,31 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 6265,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-09T11:00:52.399Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-description-in-branding-chrome\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-description-in-branding-chrome\\test-finished-1.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "da7245064ca711f00a6c-9cb22ec190ab29665ead",
-          "file": "tests/branding.test.ts",
-          "line": 20,
-          "column": 5
-        },
-        {
-          "title": "Branding updating - description updating",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chrome",
-              "projectName": "chrome",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "status": "passed",
-                  "duration": 15342,
+                  "duration": 3710,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "Branding updated!\n"
-                    },
-                    {
-                      "text": "This is new description: Hello World this is a new description, Lorem Ipsum is simply dummy text of the printing and typesetting industry.\n"
+                      "text": " New contact address\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-09T11:00:52.359Z",
+                  "startTime": "2023-05-09T15:14:53.048Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Branding-updating---description-updating-chrome\\video.webm"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-Contact-details---then-validate-on-front-page-chrome\\video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Branding-updating---description-updating-chrome\\test-finished-1.png"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-Contact-details---then-validate-on-front-page-chrome\\test-finished-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-Contact-details---then-validate-on-front-page-chrome\\test-finished-2.png"
                     }
                   ]
                 }
@@ -151,65 +110,10 @@
               "status": "expected"
             }
           ],
-          "id": "da7245064ca711f00a6c-a90fac0b5f606481d7fe",
+          "id": "da7245064ca711f00a6c-a8425e985d4e738cafe6",
           "file": "tests/branding.test.ts",
-          "line": 39,
-          "column": 5
-        },
-        {
-          "title": "Change description in branding - then validate on front page",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chrome",
-              "projectName": "chrome",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "status": "passed",
-                  "duration": 8964,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "The description is not empty!  Text value is: Hello World this is a new description, Lorem Ipsum is simply dummy text of the printing and typesetting industry.\n"
-                    },
-                    {
-                      "text": "This text was from front-page: Hello World this is a new description, Lorem Ipsum is simply dummy text of the printing and typesetting industry.\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-09T11:00:52.379Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-description-in-branding---then-validate-on-front-page-chrome\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-description-in-branding---then-validate-on-front-page-chrome\\test-finished-1.png"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Change-description-in-branding---then-validate-on-front-page-chrome\\test-finished-2.png"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "da7245064ca711f00a6c-d7d304b766e2fe3538f7",
-          "file": "tests/branding.test.ts",
-          "line": 75,
-          "column": 5
+          "line": 100,
+          "column": 6
         }
       ]
     }

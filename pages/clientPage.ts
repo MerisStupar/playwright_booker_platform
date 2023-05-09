@@ -5,7 +5,7 @@ export default class ClientPage{
 
     constructor(public page:Page){}
 
-
+    //Rooms selectors
     private titleRoom = this.page.locator(`div.col-sm-7 > h3`).last();
     private bookButon = this.page.locator(`div.col-sm-7 > button`).last();
 
@@ -20,11 +20,19 @@ export default class ClientPage{
     private cancleButton = this.page.locator(`//button[text()='Cancel']`);
 
 
+    //General selectors 
+    brandingDescription = this.page.locator(`.col-sm-10 > p`);
+
+
+
+
 
     async validateTitleRoom(){
         const textContext = await this.titleRoom.textContent()
         expect(this.titleRoom).toBeVisible();
         expect(textContext).toContain(data.roomType);
     }
+    
+
     
 }

@@ -1,3 +1,7 @@
 {
-    "description": "Hello World this is a new description, Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    "description": "Hello World this is a new description, Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "contactName": "New contact name",
+    "contactAddress": "New contact address",
+    "contactPhone": "111222333",
+    "contactEmail": "test@1secmail.com"
 }

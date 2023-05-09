@@ -1,7 +1,14 @@
+import { chromium } from "@playwright/test";
 import { expect, test } from "../baseFixture/baseFixture";
 import * as data from "../data-test/brandingData.json";
 
 
+async function launchBrowser() {
+    const browser = await chromium.launch();
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    return { browser, context, page };
+  }
 
 test.beforeEach(async ({ page, baseURL, loginPage }) => {
     await page.goto(`${baseURL}/#/admin/branding`);
@@ -31,7 +38,7 @@ test('Change description in branding', async ({ brandingPage, page }) => {
 
 test('Branding updating - description updating', async ({ page, brandingPage }) => {
     await page.waitForTimeout(3000);
-    await brandingPage.changeDesc();
+    await brandingPage.enterDescription();
     // await page.waitForTimeout(3000);
     // await brandingPage.descriptionField.clear()
     await brandingPage.descriptionField.fill(data.description);
@@ -65,7 +72,14 @@ test('Branding updating - description updating', async ({ page, brandingPage }) 
 });
 
 
-test.only('Test - with POM', async ({ page, brandingPage }) => {
+test('Change description in branding - then validate on front page', async ({ page, brandingPage, baseURL }) => {
+
+    //This is from function for reusing the newPage in other tests if needed
+    const {page: newPage} = await launchBrowser();
+
+   /*  const browser = await chromium.launch();
+    const newContext = await browser.newContext();
+    const newPage = await newContext.newPage(); */
 
     await page.waitForTimeout(500); 
     await brandingPage.enterDescription();
@@ -79,6 +93,23 @@ test.only('Test - with POM', async ({ page, brandingPage }) => {
 
     await brandingPage.submitButton.click();
     await brandingPage.validatePopupModal();
+
+    
+    //NOVA STRANICA
+
+    await newPage.goto(`${baseURL}`);
+    
+    const descriptionFrontPage = await newPage.locator(`.col-sm-10 > p`);
+    const textContext = await descriptionFrontPage.textContent();
+
+    console.log(`This text was from front-page: ${textContext}`);
+
+    await descriptionFrontPage.scrollIntoViewIfNeeded();
+    await newPage.screenshot();
+    
+    expect(textContext).toContain(data.description);
+
+
 }); 
 
 

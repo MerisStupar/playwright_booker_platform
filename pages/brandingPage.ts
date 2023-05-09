@@ -34,8 +34,10 @@ export default class BrandingPage{
         await this.logoField.type(logo);
     }
 
-    async enterDescription(description:string){
-        await this.descriptionField.type(description);
+    async enterDescription(){
+        await this.descriptionField.clear();
+        await this.descriptionField.fill(data.description);
+        return;
     }
 
     async enterLatitude(latitude:string){
@@ -62,13 +64,13 @@ export default class BrandingPage{
         await this.contactEmailField.type(email);
     }
 
-    async changeDesc(){
-        
-        const descriptionSlector = 'textarea#description';
-        await this.page.waitForSelector(descriptionSlector);
+    async validatePopupModal (){
+        const expectedText = "Branding updated!";
+        const textContext = await this.modalText.textContent();
 
-        await this.descriptionField.clear();
-        return;
+        await expect(this.modalPopup).toBeVisible();
+        await expect(textContext).toContain(expectedText);
+        await expect(this.modalButton).toBeVisible();
     }
 
    

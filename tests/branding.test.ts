@@ -68,15 +68,17 @@ test('Branding updating - description updating', async ({ page, brandingPage }) 
 test.only('Test - with POM', async ({ page, brandingPage }) => {
 
     await page.waitForTimeout(500); 
-    await brandingPage.changeDesc();
-   
+    await brandingPage.enterDescription();
     await page.waitForTimeout(4000);
     const descriptionFieldValue = await brandingPage.descriptionField.inputValue();
     if (descriptionFieldValue === '') {
         console.log('The description field is empty.');
     } else {
-        console.log('The description field is not empty.');
+        console.log(`The description is not empty!  Text value is: ${data.description}`);
     }
+
+    await brandingPage.submitButton.click();
+    await brandingPage.validatePopupModal();
 }); 
 
 

@@ -78,16 +78,16 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 5813,
+                  "duration": 5896,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "The description field is empty.\n"
+                      "text": "The description is not empty!  Text value is: Hello World New description\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-08T14:58:20.557Z",
+                  "startTime": "2023-05-09T10:23:31.154Z",
                   "attachments": [
                     {
                       "name": "video",

@@ -1,15 +1,16 @@
 import { chromium } from "@playwright/test";
 import { expect, test } from "../baseFixture/baseFixture";
 import * as data from "../data-test/brandingData.json";
-import { ECDH } from "crypto";
+import ClientPage from "../pages/clientPage";
 
 
-async function launchBrowser() {
+
+const launchBrowser = async () => {
     const browser = await chromium.launch();
     const context = await browser.newContext();
     const page = await context.newPage();
     return { browser, context, page };
-  }
+  };
 
 test.beforeEach(async ({ page, baseURL, loginPage }) => {
     await page.goto(`${baseURL}/#/admin/branding`);
@@ -124,16 +125,39 @@ test('Change Contact details - then validate on front page', async ({brandingPag
 });
 
 
-test.only('test', async ({ page, clientPage, baseURL, brandingPage }) => {
-
-
-    const {page: newPage} = await clientPage.launchBrowser();
+test.only('test', async ({ baseURL, brandingPage}) => {
    
+
+    const { page } = await launchBrowser();
+    const clientPage = new ClientPage(page);
+
     await brandingPage.changeContactDetails();
-    await newPage.goto(`${baseURL}`);
+    await clientPage.page.goto(`${baseURL}`);
+
+    const contactName = await clientPage.getContactName();
+    const contactAddress = await clientPage.getContactAddress();
+    const contactPhone = await clientPage.getContactPhone();
+    const contactEmail = await clientPage.getContactEmail();
 
 
-});
+    expect(contactName).toContain(data.contactName);
+    expect(contactAddress).toContain(data.contactAddress);
+    expect(contactPhone).toContain(data.contactPhone);
+    expect(contactEmail).toContain(data.contactEmail);
+
+
+    console.log(`New contact DATA: 
+    ${contactName} \n
+    ${contactAddress} \n
+    ${contactPhone} \n
+    ${contactEmail}
+    `);
+
+
+
+
+
+  });
 
 
 

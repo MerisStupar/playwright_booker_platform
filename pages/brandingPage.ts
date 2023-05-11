@@ -27,6 +27,9 @@ export default class BrandingPage{
     modalButton = this.page.locator(`.col-12 button`);
 
 
+    alertMessage = this.page.locator(`div.alert.alert-danger`).innerText();
+
+
     async enterName(name:string){
         await this.nameField.type(name);
     }
@@ -113,6 +116,10 @@ export default class BrandingPage{
         }
     }
 
+
+    async validateAlertMessage(){
+        return await this.alertMessage;
+    }
    
 
 

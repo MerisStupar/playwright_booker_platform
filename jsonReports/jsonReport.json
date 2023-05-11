@@ -78,16 +78,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 4888,
+                  "duration": 5112,
                   "errors": [],
-                  "stdout": [
-                    {
-                      "text": "New contact DATA: \n     New contact name \n\n     New contact address \n\n     111222333 \n\n     test@1secmail.com\n    \n"
-                    }
-                  ],
+                  "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-10T20:16:35.764Z",
+                  "startTime": "2023-05-11T11:08:20.101Z",
                   "attachments": [
                     {
                       "name": "video",
@@ -98,11 +94,6 @@
                       "name": "screenshot",
                       "contentType": "image/png",
                       "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-test-chrome\\test-finished-1.png"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-test-chrome\\test-finished-2.png"
                     }
                   ]
                 }
@@ -112,7 +103,7 @@
           ],
           "id": "da7245064ca711f00a6c-0a5da03aed8bec154683",
           "file": "tests/branding.test.ts",
-          "line": 128,
+          "line": 153,
           "column": 6
         }
       ]

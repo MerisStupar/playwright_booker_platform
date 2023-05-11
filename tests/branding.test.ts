@@ -12,6 +12,7 @@ const launchBrowser = async () => {
     return { browser, context, page };
   };
 
+
 test.beforeEach(async ({ page, baseURL, loginPage }) => {
     await page.goto(`${baseURL}/#/admin/branding`);
     await loginPage.loginAdmin(process.env.USERNAM_OF_ADMIN!, process.env.PASSWORD_OF_ADMIN!);
@@ -74,9 +75,10 @@ test('Branding updating - description updating', async ({ page, brandingPage }) 
 });
 
 
-test('Change B&B description in branding - then validate on front page', async ({ page, brandingPage, baseURL }) => {
+test('Change B&B description in branding - then validate on front page', async ({ brandingPage, baseURL }) => {
     //This is from function for reusing the newPage in other tests if needed
-    const {page: newPage} = await launchBrowser();
+    const { page } = await launchBrowser();
+    const clientPage = new ClientPage(page);
 
     await page.waitForTimeout(500); 
     await brandingPage.enterDescription();
@@ -86,14 +88,13 @@ test('Change B&B description in branding - then validate on front page', async (
 
     
     //Opening new windows - to validate data on frontpage
-    await newPage.goto(`${baseURL}`);
-    const descriptionFrontPage = await newPage.locator(`.col-sm-10 > p`);
+    await clientPage.page.goto(`${baseURL}`);
+    const descriptionFrontPage = await clientPage.page.locator(`.col-sm-10 > p`);
     const textContext = await descriptionFrontPage.textContent();
 
     console.log(`This text was from front-page: ${textContext}`);
 
     await descriptionFrontPage.scrollIntoViewIfNeeded();
-    await newPage.screenshot();
     expect(textContext).toContain(data.description);
 }); 
 
@@ -125,7 +126,7 @@ test('Change Contact details - then validate on front page', async ({brandingPag
 });
 
 
-test.only('test', async ({ baseURL, brandingPage}) => {
+test('Change Contact Details - then validate on front page POM', async ({ baseURL, brandingPage}) => {
    
 
     const { page } = await launchBrowser();
@@ -134,31 +135,38 @@ test.only('test', async ({ baseURL, brandingPage}) => {
     await brandingPage.changeContactDetails();
     await clientPage.page.goto(`${baseURL}`);
 
-    const contactName = await clientPage.getContactName();
-    const contactAddress = await clientPage.getContactAddress();
-    const contactPhone = await clientPage.getContactPhone();
-    const contactEmail = await clientPage.getContactEmail();
-
-
-    expect(contactName).toContain(data.contactName);
-    expect(contactAddress).toContain(data.contactAddress);
-    expect(contactPhone).toContain(data.contactPhone);
-    expect(contactEmail).toContain(data.contactEmail);
+    expect(await clientPage.getContactName()).toContain(data.contactName);
+    expect(await clientPage.getContactAddress()).toContain(data.contactAddress);
+    expect(await clientPage.getContactPhone()).toContain(data.contactPhone);
+    expect(await clientPage.getContactEmail()).toContain(data.contactEmail);
 
 
     console.log(`New contact DATA: 
-    ${contactName} \n
-    ${contactAddress} \n
-    ${contactPhone} \n
-    ${contactEmail}
+    ${await clientPage.getContactName()} \n
+    ${await clientPage.getContactAddress()} \n
+    ${await clientPage.getContactPhone()} \n
+    ${await clientPage.getContactEmail()}
     `);
-
-
-
-
 
   });
 
+test.only("test", async ({ page, baseURL, brandingPage }) => {
+    
+    await page.goto(`${baseURL}/#/admin/branding`);
+
+    await brandingPage.nameField.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(3000);
+    await brandingPage.nameField.fill('');
+
+    await brandingPage.submitBtn();
+
+    const expectedAlertMessage = 'Name should not be blank' && 'size must be between 3 and 100' || 'size must be between 3 and 100' && 'Name should not be blank';
+
+    expect(await brandingPage.validateAlertMessage()).toContain(expectedAlertMessage);
+
+
+  });
+  
 
 
 

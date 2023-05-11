@@ -2,6 +2,7 @@ import { chromium } from "@playwright/test";
 import { expect, test } from "../baseFixture/baseFixture";
 import * as data from "../data-test/brandingData.json";
 import ClientPage from "../pages/clientPage";
+import BrandingPage from "../pages/brandingPage";
 
 
 
@@ -126,7 +127,7 @@ test('Change Contact details - then validate on front page', async ({brandingPag
 });
 
 
-test('Change Contact Details - then validate on front page POM', async ({ baseURL, brandingPage}) => {
+test('Change Contact Details - then validate on front page with POM', async ({ baseURL, brandingPage}) => {
    
 
     const { page } = await launchBrowser();
@@ -150,23 +151,55 @@ test('Change Contact Details - then validate on front page POM', async ({ baseUR
 
   });
 
-test.only("test", async ({ page, baseURL, brandingPage }) => {
+test("B&B Name field - passing empty", async ({ page, baseURL, brandingPage }) => {
     
     await page.goto(`${baseURL}/#/admin/branding`);
-
     await brandingPage.nameField.scrollIntoViewIfNeeded();
-    await page.waitForTimeout(3000);
+    await page.waitForTimeout(500);
     await brandingPage.nameField.fill('');
-
     await brandingPage.submitBtn();
-
-    const expectedAlertMessage = 'Name should not be blank' && 'size must be between 3 and 100' || 'size must be between 3 and 100' && 'Name should not be blank';
-
-    expect(await brandingPage.validateAlertMessage()).toContain(expectedAlertMessage);
-
+    await brandingPage.validateAlertMessage();
 
   });
+
+
+test.only('B&B Logo field - validate on the front page', async ({ baseURL, brandingPage }) => {
   
+    const { page } = await launchBrowser();
+    const clientPage = new ClientPage(page);
+
+    const brokenURL = 'https://www.mwtestconsultancytest.co.uk/img/rbp-logo.png'
+
+    await page.goto(`${baseURL}/#/admin/branding`);
+    await brandingPage.logoField.scrollIntoViewIfNeeded();
+    await brandingPage.logoField.fill('');
+    await page.waitForTimeout(3000);
+    await brandingPage.logoField.fill(brokenURL);
+    await brandingPage.submitBtn();
+    await brandingPage.validatePopupModal();
+
+     //Opening new windows - to validate data on frontpage
+    await clientPage.page.goto(`${baseURL}`);
+    await clientPage.page.waitForTimeout(3000);
+
+    const imgLogoLocator = await clientPage.page.locator(`img.hotel-logoUrl`);
+    const imgLogoElement = await imgLogoLocator.elementHandle();
+
+    if (imgLogoElement !== null) {
+        const srcHandle = await (await imgLogoElement.getProperty('src')).jsonValue();
+        const heightHandle = await (await imgLogoElement.getProperty('naturalHeight')).jsonValue();
+        const widthHandle = await (await imgLogoElement.getProperty('naturalWidth')).jsonValue();
+        // const width = await widthHandle.jsonValue();
+        expect(srcHandle).toEqual(brokenURL);
+        expect(imgLogoLocator).toBeVisible();
+        expect(heightHandle).toEqual(0); // replace with the expected height value
+        expect(widthHandle).toEqual(0); // replace with the expected width value
+      } else {
+        throw new Error('Could not find logo element');
+      }
+
+
+});
 
 
 

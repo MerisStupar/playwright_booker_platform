@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\playwright.config.ts",
-    "rootDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform",
+    "configFile": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\playwright.config.ts",
+    "rootDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -37,12 +37,12 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform/test-results",
+        "outputDir": "C:/Users/Meris/Desktop/playwright_booker_platform/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "chrome",
         "name": "chrome",
-        "testDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform",
+        "testDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
           "tests/branding.test.ts"
@@ -64,7 +64,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "test",
+          "title": "B&B Logo field - validate on the front page",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,22 +78,27 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 5112,
+                  "duration": 9603,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-11T11:08:20.101Z",
+                  "startTime": "2023-05-11T17:17:22.697Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-test-chrome\\video.webm"
+                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-B-B-Logo-field---validate-on-the-front-page-chrome\\video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-test-chrome\\test-finished-1.png"
+                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-B-B-Logo-field---validate-on-the-front-page-chrome\\test-finished-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-B-B-Logo-field---validate-on-the-front-page-chrome\\test-finished-2.png"
                     }
                   ]
                 }
@@ -101,9 +106,9 @@
               "status": "expected"
             }
           ],
-          "id": "da7245064ca711f00a6c-0a5da03aed8bec154683",
+          "id": "da7245064ca711f00a6c-6778e8bee1ac187b0be9",
           "file": "tests/branding.test.ts",
-          "line": 153,
+          "line": 166,
           "column": 6
         }
       ]

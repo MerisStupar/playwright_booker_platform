@@ -27,15 +27,13 @@ export default class BrandingPage{
     modalButton = this.page.locator(`.col-12 button`);
 
 
-    alertMessage = this.page.locator(`div.alert.alert-danger`).innerText();
-
 
     async enterName(name:string){
         await this.nameField.type(name);
     }
 
-    async enterLogo(logo:string){
-        await this.logoField.type(logo);
+    async enterLogo(){
+       return await this.logoField
     }
 
     async enterDescription(){
@@ -117,8 +115,16 @@ export default class BrandingPage{
     }
 
 
-    async validateAlertMessage(){
-        return await this.alertMessage;
+    async validateAlertMessage() {
+        const alertMessage = this.page.locator(`div.alert.alert-danger`).innerText();
+
+        const expectedAlertMessage = 'Name should not be blank' && 'size must be between 3 and 100' || 'size must be between 3 and 100' && 'Name should not be blank';
+
+
+        expect(await alertMessage).toContain(expectedAlertMessage)
+
+
+        return await alertMessage;
     }
    
 

@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\playwright.config.ts",
-    "rootDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
+    "configFile": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\playwright.config.ts",
+    "rootDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -37,12 +37,12 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Users/Meris/Desktop/playwright_booker_platform/test-results",
+        "outputDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "chrome",
         "name": "chrome",
-        "testDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
+        "testDir": "C:/Users/ZIRA/Desktop/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
           "tests/branding.test.ts"
@@ -65,7 +65,7 @@
       "specs": [
         {
           "title": "B&B Logo field - validate on the front page",
-          "ok": true,
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -77,33 +77,52 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 9603,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 9421,
+                  "error": {
+                    "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1425\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1425\u001b[39m\n    at ClientPage.validateLogo (C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\pages\\clientPage.ts:83:29)\n    at C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\tests\\branding.test.ts:185:5",
+                    "snippet": "\u001b[90m   at \u001b[39mpages\\clientPage.ts:83\n\n\u001b[0m \u001b[90m 81 |\u001b[39m         expect(imgLogoLocator)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 82 |\u001b[39m         \u001b[90m// expect(heightHandle).toEqual(0); // replace with the expected height value\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 83 |\u001b[39m         expect(widthHandle)\u001b[33m.\u001b[39mtoEqual(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// replace with the expected width value\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 84 |\u001b[39m       } \u001b[36melse\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 85 |\u001b[39m         \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Could not find logo element'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 86 |\u001b[39m       }\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\pages\\clientPage.ts",
+                        "column": 29,
+                        "line": 83
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\nExpected: \u001b[32m0\u001b[39m\nReceived: \u001b[31m1425\u001b[39m\n\n\u001b[90m   at \u001b[39mpages\\clientPage.ts:83\n\n\u001b[0m \u001b[90m 81 |\u001b[39m         expect(imgLogoLocator)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 82 |\u001b[39m         \u001b[90m// expect(heightHandle).toEqual(0); // replace with the expected height value\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 83 |\u001b[39m         expect(widthHandle)\u001b[33m.\u001b[39mtoEqual(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// replace with the expected width value\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 84 |\u001b[39m       } \u001b[36melse\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 85 |\u001b[39m         \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(\u001b[32m'Could not find logo element'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 86 |\u001b[39m       }\u001b[0m\n\n\u001b[2m    at ClientPage.validateLogo (C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\pages\\clientPage.ts:83:29)\u001b[22m\n\u001b[2m    at C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\tests\\branding.test.ts:185:5\u001b[22m"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-11T17:17:22.697Z",
+                  "startTime": "2023-05-12T07:08:40.234Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-B-B-Logo-field---validate-on-the-front-page-chrome\\video.webm"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-B-B-Logo-field---validate-on-the-front-page-chrome\\video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-B-B-Logo-field---validate-on-the-front-page-chrome\\test-finished-1.png"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-B-B-Logo-field---validate-on-the-front-page-chrome\\test-failed-1.png"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-B-B-Logo-field---validate-on-the-front-page-chrome\\test-finished-2.png"
+                      "path": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-B-B-Logo-field---validate-on-the-front-page-chrome\\test-failed-2.png"
                     }
-                  ]
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\ZIRA\\Desktop\\playwright_booker_platform\\pages\\clientPage.ts",
+                    "column": 29,
+                    "line": 83
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
           "id": "da7245064ca711f00a6c-6778e8bee1ac187b0be9",

@@ -55,6 +55,38 @@ export default class ClientPage {
       .locator(`.col-sm-5 > p:nth-of-type(4)`)
       .textContent();
   }
+
+  async getLogoPicture(){
+    return await this.page
+    .locator(`img.hotel-logoUrl`);
+  }
+
+  async logoHandle(){
+    return   await this.page.locator(`img.hotel-logoUrl`);
+  }
+
+
+  
+  async validateLogo(){
+    const brokenURL = 'https://www.mwtestconsultancy.co.uk/img/rbp-logo.png';
+    const imgLogoLocator = await this.page.locator(`img.hotel-logoUrl`);
+    const imgLogoElement = await imgLogoLocator.elementHandle();
+
+    if (imgLogoElement !== null) {
+        const srcHandle = await (await imgLogoElement.getProperty('src')).jsonValue();
+        const heightHandle = await (await imgLogoElement.getProperty('naturalHeight')).jsonValue();
+        const widthHandle = await (await imgLogoElement.getProperty('naturalWidth')).jsonValue();
+        expect(srcHandle).toEqual(brokenURL);
+        expect(imgLogoLocator).toBeVisible();
+        expect(heightHandle).toEqual(0); // replace with the expected height value
+        expect(widthHandle).toEqual(0); // replace with the expected width value
+      } else {
+        throw new Error('Could not find logo element');
+      }
+
+  }
+
+
 }
 
 module.exports = ClientPage;

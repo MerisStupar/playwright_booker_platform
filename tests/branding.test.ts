@@ -163,12 +163,12 @@ test("B&B Name field - passing empty", async ({ page, baseURL, brandingPage }) =
   });
 
 
-test.only('B&B Logo field - validate on the front page', async ({ baseURL, brandingPage }) => {
+test.only('B&B Logo field - validate on the front page - POM', async ({ baseURL, brandingPage }) => {
   
     const { page } = await launchBrowser();
     const clientPage = new ClientPage(page);
 
-    const brokenURL = 'https://www.mwtestconsultancytest.co.uk/img/rbp-logo.png'
+    const brokenURL = 'https://www.mwtestconsultancy.co.uk/img/rbp-logo.png';
 
     await page.goto(`${baseURL}/#/admin/branding`);
     await brandingPage.logoField.scrollIntoViewIfNeeded();
@@ -182,23 +182,7 @@ test.only('B&B Logo field - validate on the front page', async ({ baseURL, brand
     await clientPage.page.goto(`${baseURL}`);
     await clientPage.page.waitForTimeout(3000);
 
-    const imgLogoLocator = await clientPage.page.locator(`img.hotel-logoUrl`);
-    const imgLogoElement = await imgLogoLocator.elementHandle();
-
-    if (imgLogoElement !== null) {
-        const srcHandle = await (await imgLogoElement.getProperty('src')).jsonValue();
-        const heightHandle = await (await imgLogoElement.getProperty('naturalHeight')).jsonValue();
-        const widthHandle = await (await imgLogoElement.getProperty('naturalWidth')).jsonValue();
-        // const width = await widthHandle.jsonValue();
-        expect(srcHandle).toEqual(brokenURL);
-        expect(imgLogoLocator).toBeVisible();
-        expect(heightHandle).toEqual(0); // replace with the expected height value
-        expect(widthHandle).toEqual(0); // replace with the expected width value
-      } else {
-        throw new Error('Could not find logo element');
-      }
-
-
+    await clientPage.validateLogo();
 });
 
 

@@ -116,18 +116,13 @@ export default class BrandingPage{
 
 
     async validateAlertMessage() {
-        const alertMessage = this.page.locator(`div.alert.alert-danger`).innerText();
 
+        const alertMessage = this.page.locator(`div.alert.alert-danger`).innerText();
         const expectedAlertMessage = 'Name should not be blank' && 'size must be between 3 and 100' || 'size must be between 3 and 100' && 'Name should not be blank';
 
-
         expect(await alertMessage).toContain(expectedAlertMessage)
-
-
         return await alertMessage;
     }
-   
-
 
 }
 

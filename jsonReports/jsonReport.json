@@ -78,16 +78,22 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 2373,
+                  "duration": 14789,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "Current text: Thanks for getting in touch Wendigo Meris! && This is the Subject: Hello World!\n"
+                      "text": "Current text: Thanks for getting in touch Meris Test! \n This is the Subject: Hello World!\n"
+                    },
+                    {
+                      "text": "https://automationintesting.online/#/admin/messages\n"
+                    },
+                    {
+                      "text": "Meris TestThis is the Subject: Hello World!\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-13T10:50:08.768Z",
+                  "startTime": "2023-05-13T12:25:05.281Z",
                   "attachments": [
                     {
                       "name": "video",
@@ -98,6 +104,11 @@
                       "name": "screenshot",
                       "contentType": "image/png",
                       "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Sending-a-message-to-the-admin-chrome\\test-finished-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Sending-a-message-to-the-admin-chrome\\test-finished-2.png"
                     }
                   ]
                 }
@@ -107,7 +118,7 @@
           ],
           "id": "eddcac66e3aeb2ef7cdb-e060b63d7ca60aa5291f",
           "file": "tests/client.test.ts",
-          "line": 13,
+          "line": 20,
           "column": 5
         }
       ]

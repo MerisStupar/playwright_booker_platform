@@ -83,10 +83,7 @@ export default class ClientPage {
     await expect(await responseMessage.textContent()).toContain(expectedText);
     await expect(await responseParagraph.textContent()).toContain(expectedParagraph);
 
-    console.log(`Current text: ${await responseMessage.textContent()} && ${await responseParagraph.textContent()}`)
-    
-
-
+    console.log(`Current text: ${await responseMessage.textContent()} \n ${await responseParagraph.textContent()}`);
   }
 
 

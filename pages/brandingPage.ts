@@ -10,6 +10,7 @@ export default class BrandingPage{
     logoField = this.page.locator(`#logoUrl`);
     descriptionField = this.page.locator(`textarea#description`);
 
+  
     //Map details locatos
     latitudeField = this.page.locator(`#latitude`);
     longitudeField = this.page.locator(`#longitude`);
@@ -27,6 +28,7 @@ export default class BrandingPage{
     modalButton = this.page.locator(`.col-12 button`);
 
 
+    alertMesasge = this.page.locator(`div.alert.alert-danger`)
 
     async enterName(name:string){
         await this.nameField.type(name);
@@ -115,13 +117,23 @@ export default class BrandingPage{
     }
 
 
-    async validateAlertMessage() {
+    async validateAlertNameMessage() {
 
         const alertMessage = this.page.locator(`div.alert.alert-danger`).innerText();
         const expectedAlertMessage = 'Name should not be blank' && 'size must be between 3 and 100' || 'size must be between 3 and 100' && 'Name should not be blank';
 
         expect(await alertMessage).toContain(expectedAlertMessage)
         return await alertMessage;
+    }
+
+    async validateAlertLogoMessage(){
+        const expectedAlertLogoMessage = 'Url should not be blank';
+        const alertMessage = this.page.locator(`div.alert.alert-danger`).innerText();
+
+        await expect(await alertMessage).toContain(expectedAlertLogoMessage);
+
+        return await alertMessage;
+
     }
 
 }

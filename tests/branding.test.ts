@@ -2,8 +2,6 @@ import { chromium } from "@playwright/test";
 import { expect, test } from "../baseFixture/baseFixture";
 import * as data from "../data-test/brandingData.json";
 import ClientPage from "../pages/clientPage";
-import BrandingPage from "../pages/brandingPage";
-
 
 
 const launchBrowser = async () => {
@@ -33,24 +31,15 @@ test('Change description in branding', async ({ brandingPage, page }) => {
 
     await brandingPage.modalPopup.isVisible();
     await brandingPage.modalText.isVisible();
-
-    // await brandingPage.modalText.textContent();
-    
-    // console.log(brandingPage.modalText);
 });
 
 
 test('Branding updating - description updating', async ({ page, brandingPage }) => {
-    await page.waitForTimeout(3000);
-    await brandingPage.enterDescription();
-    // await page.waitForTimeout(3000);
-    // await brandingPage.descriptionField.clear()
-    await brandingPage.descriptionField.fill(data.description);
-    await page.waitForTimeout(3000);
-    expect(brandingPage.descriptionField).toHaveValue(data.description);
 
+    await brandingPage.enterDescription();
+    await brandingPage.descriptionField.fill(data.description);
+    expect(brandingPage.descriptionField).toHaveValue(data.description);
     await brandingPage.submitButton.click();
-    await page.waitForTimeout(3000);
 
     const modalPopup = await page.locator(`div[role='dialog']`);
     await expect(modalPopup).toBeVisible();
@@ -72,7 +61,6 @@ test('Branding updating - description updating', async ({ page, brandingPage }) 
 
     console.log("This is new description: " + textDesc);
 
-    await page.waitForTimeout(4000);
 });
 
 
@@ -158,12 +146,24 @@ test("B&B Name field - passing empty", async ({ page, baseURL, brandingPage }) =
     await page.waitForTimeout(500);
     await brandingPage.nameField.fill('');
     await brandingPage.submitBtn();
-    await brandingPage.validateAlertMessage();
+    await brandingPage.validateAlertNameMessage();
 
   });
 
+test.only('Logo field - passing emtpy', async ({ page, baseURL, brandingPage }) => {
 
-test.only('B&B Logo field - validate on the front page - POM', async ({ baseURL, brandingPage }) => {
+    await page.goto(`${baseURL}/#/admin/branding`);
+    await brandingPage.logoField.scrollIntoViewIfNeeded();
+    await brandingPage.logoField.waitFor({timeout: 1000})
+    await brandingPage.logoField.clear();
+    await brandingPage.submitBtn();
+    await brandingPage.validateAlertLogoMessage();
+
+});
+  
+
+
+test('B&B Logo field - validate on the front page - POM', async ({ baseURL, brandingPage }) => {
   
     const { page } = await launchBrowser();
     const clientPage = new ClientPage(page);

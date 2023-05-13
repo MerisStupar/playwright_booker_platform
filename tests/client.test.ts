@@ -16,6 +16,22 @@ test.beforeEach(async ({ page, baseURL }) => {
 });
 
 
+test.only('Pass empty mesasge to the admin', async ({ page, clientPage }) => {
+    
+    await clientPage.sendEmptyMessageToAdmin();
+    await clientPage.clikcSubmitButton();
+    await page.waitForTimeout(4000);
+
+    const alertMessage_Empty = page.locator(`div.alert.alert-danger`).textContent();
+
+    console.log(await alertMessage_Empty);
+
+});
+
+
+
+
+//! Sending message to the Admin from frontpage - then validate on admin panel
 test('Sending message to the admin - validate from admin', async ({ clientPage }) => {
 
     const { page } = await launchBrowser();

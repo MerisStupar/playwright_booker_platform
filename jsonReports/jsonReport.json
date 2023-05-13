@@ -64,7 +64,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "Sending a message to the admin",
+          "title": "Pass empty mesasge to the admin",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,40 +78,26 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 5605,
+                  "duration": 6102,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "Current text: Thanks for getting in touch Meris Test! \n This is the Subject: Hello World!\n"
-                    },
-                    {
-                      "text": "This should be URL from messages: https://automationintesting.online/#/admin/messages\n"
-                    },
-                    {
-                      "text": "Meris TestThis is the Subject: Hello World!\n"
-                    },
-                    {
-                      "text": "Message popup is visible\n"
+                      "text": "Phone must be between 11 and 21 characters.Email may not be blankPhone may not be blankMessage must be between 20 and 2000 characters.Message may not be blankSubject must be between 5 and 100 characters.Subject may not be blankName may not be blank\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-13T16:46:09.239Z",
+                  "startTime": "2023-05-13T17:32:30.191Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Sending-a-message-to-the-admin-chrome\\video.webm"
+                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Pass-empty-mesasge-to-the-admin-chrome\\video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Sending-a-message-to-the-admin-chrome\\test-finished-1.png"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Sending-a-message-to-the-admin-chrome\\test-finished-2.png"
+                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Pass-empty-mesasge-to-the-admin-chrome\\test-finished-1.png"
                     }
                   ]
                 }
@@ -119,10 +105,10 @@
               "status": "expected"
             }
           ],
-          "id": "eddcac66e3aeb2ef7cdb-e060b63d7ca60aa5291f",
+          "id": "eddcac66e3aeb2ef7cdb-c1ef5410e8d2d997ea6f",
           "file": "tests/client.test.ts",
-          "line": 20,
-          "column": 5
+          "line": 19,
+          "column": 6
         }
       ]
     }

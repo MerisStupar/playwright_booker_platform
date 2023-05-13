@@ -70,6 +70,16 @@ export default class ClientPage {
     await this.getMessage(clientData.message);
   }
 
+    async sendEmptyMessageToAdmin(){
+    await this.getName(``);
+    await this.getEmail(``);
+    await this.getPhone(``);
+    await this.getSubject(``);
+    await this.getMessage(``);
+  }
+
+
+  
 
   async validateMessageToAdmin(){
     const expectedText = `Thanks for getting in touch ${clientData.name}`;

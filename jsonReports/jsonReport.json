@@ -45,7 +45,7 @@
         "testDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
-          "tests/branding.test.ts"
+          "tests/client.test.ts"
         ],
         "timeout": 30000
       }
@@ -58,13 +58,13 @@
   },
   "suites": [
     {
-      "title": "tests\\branding.test.ts",
-      "file": "tests/branding.test.ts",
+      "title": "tests\\client.test.ts",
+      "file": "tests/client.test.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Logo field - passing emtpy",
+          "title": "Sending a message to the admin",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,22 +78,26 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 1862,
+                  "duration": 2373,
                   "errors": [],
-                  "stdout": [],
+                  "stdout": [
+                    {
+                      "text": "Current text: Thanks for getting in touch Wendigo Meris! && This is the Subject: Hello World!\n"
+                    }
+                  ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-13T08:25:28.378Z",
+                  "startTime": "2023-05-13T10:50:08.768Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Logo-field---passing-emtpy-chrome\\video.webm"
+                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Sending-a-message-to-the-admin-chrome\\video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-branding-Logo-field---passing-emtpy-chrome\\test-finished-1.png"
+                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Sending-a-message-to-the-admin-chrome\\test-finished-1.png"
                     }
                   ]
                 }
@@ -101,10 +105,10 @@
               "status": "expected"
             }
           ],
-          "id": "da7245064ca711f00a6c-3ff826d4b0e9422e7c4f",
-          "file": "tests/branding.test.ts",
-          "line": 153,
-          "column": 6
+          "id": "eddcac66e3aeb2ef7cdb-e060b63d7ca60aa5291f",
+          "file": "tests/client.test.ts",
+          "line": 13,
+          "column": 5
         }
       ]
     }

@@ -1,21 +1,35 @@
 import { Page, expect } from "@playwright/test";
 import { chromium } from "@playwright/test";
 import * as data from "../data-test/roomData.json";
+import * as clientData from "../data-test/clientData.json";
 
 export default class ClientPage {
   constructor(public page: Page) {
     this.page = page;
   }
 
+
+  //Getting in touch selectors:
+   name = this.page.locator(`#name`);
+   email = this.page.locator(`#email`);
+   phone = this.page.locator(`#phone`);
+   subject = this.page.locator(`#subject`);
+   message = this.page.locator(`#description`);
+   submitContact = this.page.locator(`#submitContact`);
+
+
   //Rooms selectors
   private titleRoom = this.page.locator(`div.col-sm-7 > h3`).last();
   private bookButon = this.page.locator(`div.col-sm-7 > button`).last();
 
   //Selector when user click the book button
-  private firstName = this.page.locator(`input[name='firstname']`);
-  private lastName = this.page.locator(`input[name='lastname']`);
-  private email = this.page.locator(`input[name='email']`);
-  private phone = this.page.locator(`input[name='phone']`);
+  private bookRoomFirstName = this.page.locator(`input[name='firstname']`);
+  private bookRoomLastName = this.page.locator(`input[name='lastname']`);
+  private bookRoomEmail = this.page.locator(`input[name='email']`);
+  private bookRookPhone = this.page.locator(`input[name='phone']`);
+
+
+
 
   private bookButton = this.page.locator(`//button[text()='Book']`);
   private cancleButton = this.page.locator(`//button[text()='Cancel']`);
@@ -24,6 +38,60 @@ export default class ClientPage {
   brandingDescription = this.page.locator(`.col-sm-10 > p`);
 
   contactName = this.page.locator(`.col-sm-5 > p:nth-of-type(1)`);
+
+
+
+
+  async getName(name:string) {
+    await this.name.type(name);
+  }
+
+  async getEmail(email:string){
+    await this.email.type(email);
+  }
+  async getPhone(phone:string){
+    await this.phone.type(phone);
+  }
+  async getSubject(subject:string){
+    await this.subject.type(subject);
+  }
+  async getMessage(message:string){
+    await this.message.type(message);
+  }
+  async clikcSubmitButton(){
+    await this.submitContact.click();
+  }
+
+  async sendMessageToAdmin(){
+    await this.getName(clientData.name);
+    await this.getEmail(clientData.email);
+    await this.getPhone(clientData.phone);
+    await this.getSubject(clientData.subject);
+    await this.getMessage(clientData.message);
+  }
+
+
+  async validateMessageToAdmin(){
+    const expectedText = `Thanks for getting in touch ${clientData.name}`;
+    const expectedParagraph = `${clientData.subject}`;
+    const responseMessage = this.page.locator(`div.col-sm-5 h2`);
+    const responseParagraph = this.page.locator(`//p[text()='${clientData.subject}']`)
+    
+    await responseMessage.waitFor({timeout: 1000});
+    await responseMessage.isVisible();
+
+    await expect(await responseMessage.textContent()).toContain(expectedText);
+    await expect(await responseParagraph.textContent()).toContain(expectedParagraph);
+
+    console.log(`Current text: ${await responseMessage.textContent()} && ${await responseParagraph.textContent()}`)
+    
+
+
+  }
+
+
+
+
 
   async validateTitleRoom() {
     const textContext = await this.titleRoom.textContent();

@@ -16,8 +16,7 @@ test.beforeEach(async ({ page, baseURL }) => {
 });
 
 
-
-test('Sending a message to the admin', async ({ clientPage }) => {
+test('Sending message to the admin - validate from admin', async ({ clientPage }) => {
 
     const { page } = await launchBrowser();
     const loginPage = new LoginPage(page);
@@ -28,39 +27,8 @@ test('Sending a message to the admin', async ({ clientPage }) => {
 
     await loginPage.loginAdmin(process.env.USERNAM_OF_ADMIN!, process.env.PASSWORD_OF_ADMIN!);
 
-
-    const expectedUrl = 'https://automationintesting.online/#/admin/messages'
-
-    await loginPage.page.locator(`.nav-link > i.fa-inbox`).isVisible();
-    await loginPage.page.locator(`.nav-link > i.fa-inbox`).click();
-
-    expect(await loginPage.page.url()).toBe(expectedUrl);
-    console.log(await loginPage.page.url());
-
-    const rowMessage = page.locator(`.row.detail.read-false:last-child`).last();
-    const toText = await rowMessage.textContent();
-
-    expect(toText).toContain(clientData.name && clientData.subject);
-
-    await rowMessage.click();
-    
-    console.log(toText);
-
-    // await loginPage.validateNotificationPopUp();
-
-    const messagePopup = page.locator(`div.ReactModal__Content.ReactModal__Content--after-open.message-modal`);
-    const fromValue = page.locator(`div.col-10`);
-
-
-    await messagePopup.isVisible();
-    await page.waitForTimeout(10000);
-    expect(await fromValue.textContent()).toContain(`From: ${clientData.name}`);
-
-    
-
-
-    
-
-   
+    await loginPage.openMessagePage();
+    await loginPage.openUnreadMessage();
+    await loginPage.validateNotificationPopUp();
 
 });

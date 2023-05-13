@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test";
-
+import * as clientData from "../data-test/clientData.json";
 
 export default class LoginPage{
 
@@ -41,10 +41,39 @@ export default class LoginPage{
         await this.clickLoginButton();
     }
 
+    async openUnreadMessage(){
+
+    const rowMessage = this.page.locator(`.row.detail.read-false:last-child`).last();
+    const toText = await rowMessage.textContent();
+
+    expect(toText).toContain(clientData.name && clientData.subject);
+
+    await rowMessage.click();
+    console.log(toText);
+
+    }
+
+    async openMessagePage(){
+        const expectedUrl = 'https://automationintesting.online/#/admin/messages';
+
+        await this.page.locator(`.nav-link > i.fa-inbox`).isVisible();
+        await this.page.locator(`.nav-link > i.fa-inbox`).click();
+
+        expect(await this.page.url()).toBe(expectedUrl);
+        console.log('This should be URL from messages: '+ await this.page.url());
+    }
+
 
     async validateNotificationPopUp(){
         const messagePopup = this.page.locator(`div.ReactModal__Content.ReactModal__Content--after-open.message-modal`);
         const isVisible = await messagePopup.isVisible();
+
+         //Popup message 
+        const fromUserName = this.page.locator(`div.col-10`);
+        const fromUserPhone = this.page.locator(`div.col-2 p`);
+        const fromUserEmail = this.page.locator(`(//div[@class='col-12']//p)[1]`);
+        const fromUserSubject = this.page.locator(`(//div[@class='col-12']//span)[2]`);
+        const fromUserMessage = this.page.locator(`(//div[@class='col-12']//p)[3]`);
 
         if(isVisible){
             await console.log("Message popup is visible")
@@ -52,6 +81,14 @@ export default class LoginPage{
             await console.log("Message popup is not visible");
         }
 
+        await messagePopup.isVisible();
+        await this.page.waitForTimeout(1000);
+        
+        expect(await fromUserName.textContent()).toContain(`From: ${clientData.name}`);
+        expect(await fromUserPhone.textContent()).toContain(`Phone: ${clientData.phone}`);
+        expect(await fromUserEmail.textContent()).toContain(`Email: ${clientData.email}`);
+        expect(await fromUserSubject.textContent()).toContain(`${clientData.subject}`);
+        expect(await fromUserMessage.textContent()).toContain(`${clientData.message}`);
     }
 
 

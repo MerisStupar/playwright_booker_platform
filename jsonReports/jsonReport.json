@@ -78,22 +78,25 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 14789,
+                  "duration": 5605,
                   "errors": [],
                   "stdout": [
                     {
                       "text": "Current text: Thanks for getting in touch Meris Test! \n This is the Subject: Hello World!\n"
                     },
                     {
-                      "text": "https://automationintesting.online/#/admin/messages\n"
+                      "text": "This should be URL from messages: https://automationintesting.online/#/admin/messages\n"
                     },
                     {
                       "text": "Meris TestThis is the Subject: Hello World!\n"
+                    },
+                    {
+                      "text": "Message popup is visible\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-13T12:25:05.281Z",
+                  "startTime": "2023-05-13T16:46:09.239Z",
                   "attachments": [
                     {
                       "name": "video",

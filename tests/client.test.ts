@@ -1,8 +1,7 @@
 import { chromium } from "@playwright/test";
 import { expect, test } from "../baseFixture/baseFixture";
-import * as clientData from "../data-test/clientData.json";
 import LoginPage from "../pages/loginPage";
-import { assert, log } from "console";
+
 
 const launchBrowser = async () => {
     const browser = await chromium.launch();
@@ -30,7 +29,7 @@ test.only('Pass empty mesasge to the admin', async ({ page, clientPage }) => {
 
 
 
-
+//? Slanje poruke i provjera poruke od strane admina
 //! Sending message to the Admin from frontpage - then validate on admin panel
 test('Sending message to the admin - validate from admin', async ({ clientPage }) => {
 

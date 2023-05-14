@@ -33,15 +33,6 @@ export default class RoomsPage {
     await this.alertMessage.scrollIntoViewIfNeeded();
     expect(this.alertMessage).toHaveText(expectedText);
   }
-
-  async expectedDetails(){
-
-    const expectedDetails = "WiFiTVRadioRefreshmentsSafeViews";
-    const details = this.page.locator("(//div[@class='col-sm-5'])").last();
-    const textContext = await details.textContent();
-    expect(textContext).toContain(expectedDetails);
-    
-  }
  
   async enterRoomID(roomID: string) {
     await this.roomID.type(roomID);
@@ -140,6 +131,16 @@ export default class RoomsPage {
     await this.addRoomDetails();
     //Create room - clicking the button create
     await this.selectCreateButton();
+  }
+
+  
+  async expectedDetails_CreatingRoom(){
+
+    const expectedDetails = "WiFiTVRadioRefreshmentsSafeViews";
+    const details = this.page.locator("(//div[@class='col-sm-5'])").last();
+    const textContext = await details.textContent();
+    expect(textContext).toContain(expectedDetails);
+    
   }
 
 }

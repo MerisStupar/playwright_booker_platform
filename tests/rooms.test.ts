@@ -1,6 +1,17 @@
 import { chromium } from "@playwright/test";
 import { expect, test } from "../baseFixture/baseFixture";
 import * as data from '../data-test/roomData.json';
+import ClientPage from "../pages/clientPage";
+
+
+const launchBrowser = async () => {
+    const browser = await chromium.launch();
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    return { browser, context, page };
+  };
+
+
 
 test.beforeEach(async ({ page, baseURL, loginPage }) => {
     await page.goto(`${baseURL}/#/admin`);
@@ -44,30 +55,28 @@ test('Creating room - without POM ', async ({roomsPage }) => {
 test('Adding full specified room - with POM', async ({roomsPage }) => {
 
     await roomsPage.addingFullRoom(data.roomID, data.roomType, data.roomAccessible, data.roomPrice);
-    await roomsPage.expectedDetails();
+    await roomsPage.expectedDetails_CreatingRoom();
 
 });
 
 
+//? Kreiranje nove sobe od strane admina i provjera da se soba pojavljuje na user strani sa svim relevantnim podacima
+//! Creating room from admin then validete on frontpage
 
-test('Adding full specified room - and validate on the user side if room was visible', async ({ roomsPage, baseURL }) => {
+test.only('Adding full specified room - and validate on the user side if room was visible', async ({ roomsPage, baseURL }) => {
 
-    const browser = await chromium.launch();
-    const newContext = await browser.newContext();
-    const newPage = await newContext.newPage();
+    const { page } = await launchBrowser();
+    const clientPage = new ClientPage(page);
+
 
     await roomsPage.addingFullRoom(data.roomID, data.roomType, data.roomAccessible, data.roomPrice);
-    await roomsPage.expectedDetails();
+    await roomsPage.expectedDetails_CreatingRoom();
 
 
-    await newPage.goto(`${baseURL}`);
+    await clientPage.page.goto(`${baseURL}`);
+    await clientPage.validateRoomVisibility();
 
-    const nameOfRoom = await newPage.locator(`(//div[@class='col-sm-7']//h3)`).last();
-    const textContext = await nameOfRoom.textContent()
 
-    expect(textContext).toContain(data.roomType);
-
-    console.log(textContext)
 });
 
 

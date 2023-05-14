@@ -162,6 +162,18 @@ export default class ClientPage {
   }
 
 
+
+  async validateRoomVisibility(){
+
+    const nameOfRoom = await this.page.locator(`//h3[text()='${data.roomType}']`).last();
+    const textContextTile = await nameOfRoom.textContent();
+
+    expect(textContextTile).toContain(data.roomType);
+
+
+    console.log(textContextTile)
+  }
+
 }
 
 module.exports = ClientPage;

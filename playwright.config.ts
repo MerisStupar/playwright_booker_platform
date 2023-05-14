@@ -23,7 +23,7 @@ const config: PlaywrightTestConfig = {
     ],
 
 
-    testMatch: ["tests/client.test.ts"],
+    testMatch: ["tests/rooms.test.ts"],
     use: {
         baseURL: "https://automationintesting.online",
         headless: false,

@@ -78,16 +78,22 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 3640,
+                  "duration": 4208,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "Family\n"
+                      "text": "Current size of image: 576, 864\n"
+                    },
+                    {
+                      "text": "Current text from front page of title room is: Family\n"
+                    },
+                    {
+                      "text": "Current list of room details are: WiFiTVRadioRefreshmentsSafeViews\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-14T15:25:45.333Z",
+                  "startTime": "2023-05-14T16:02:43.827Z",
                   "attachments": [
                     {
                       "name": "video",

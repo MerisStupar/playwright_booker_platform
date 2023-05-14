@@ -68,14 +68,11 @@ test.only('Adding full specified room - and validate on the user side if room wa
     const { page } = await launchBrowser();
     const clientPage = new ClientPage(page);
 
-
     await roomsPage.addingFullRoom(data.roomID, data.roomType, data.roomAccessible, data.roomPrice);
     await roomsPage.expectedDetails_CreatingRoom();
 
-
     await clientPage.page.goto(`${baseURL}`);
-    await clientPage.validateRoomVisibility();
-
+    await clientPage.validateRoomVisibility();    
 
 });
 

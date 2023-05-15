@@ -78,12 +78,43 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 2523,
+                  "duration": 5551,
                   "errors": [],
-                  "stdout": [],
+                  "stdout": [
+                    {
+                      "text": "SUUUUUU MU\n"
+                    },
+                    {
+                      "text": "SUUUUUU MU\n"
+                    },
+                    {
+                      "text": "SUUUUUU MU\n"
+                    },
+                    {
+                      "text": "SUUUUUU MU\n"
+                    },
+                    {
+                      "text": "SUUUUUU MU\n"
+                    },
+                    {
+                      "text": "SUUUUUU MU\n"
+                    },
+                    {
+                      "text": "SUUUUUU MU\n"
+                    },
+                    {
+                      "text": "SUUUUUU MU\n"
+                    },
+                    {
+                      "text": "SUUUUUU MU\n"
+                    },
+                    {
+                      "text": "SUUUUUU MU\n"
+                    }
+                  ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-15T15:06:33.994Z",
+                  "startTime": "2023-05-15T18:47:23.126Z",
                   "attachments": [
                     {
                       "name": "video",

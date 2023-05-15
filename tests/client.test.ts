@@ -24,19 +24,24 @@ test.only('Pass empty mesasge to the admin', async ({ page, clientPage }) => {
     // const alertMessage_Empty = page.locator(`div.alert.alert-danger`).textContent();
 
     // console.log(await alertMessage_Empty);
-    await clientPage.sendEmptyMessageToAdmin(`Meris`, ``, ``, ``, ``);
+    await clientPage.sendEmptyMessageToAdmin(``, ``, ``, ``, ``);
+    await page.waitForTimeout(3000);
     await clientPage.clikcSubmitButton();
     await page.waitForTimeout(500);
   
-    const expectedMessages = [
-      'Message must be between 20 and 2000 characters.',
-      'Message may not be blank',
-      'Subject may not be blank',
-      'Subject must be between 5 and 100 characters.',
-      'Email may not be blank',
-      'Phone may not be blank',
-      'Phone must be between 11 and 21 characters.'
-    ];
+    const expectedMessages = require('../data-test/alertMessageClient.json').messages;
+
+// Rest of the test code...
+
+    // const expectedMessages = [
+    //   'Message must be between 20 and 2000 characters.',
+    //   'Message may not be blank',
+    //   'Subject may not be blank',
+    //   'Subject must be between 5 and 100 characters.',
+    //   'Email may not be blank',
+    //   'Phone may not be blank',
+    //   'Phone must be between 11 and 21 characters.'
+    // ];
   
     const alertElement = await page.waitForSelector('div.alert.alert-danger');
     const alertText = await alertElement.innerText();
@@ -44,6 +49,7 @@ test.only('Pass empty mesasge to the admin', async ({ page, clientPage }) => {
     for (const expectedMessage of expectedMessages) {
       expect(alertText).toContain(expectedMessage);
     }
+
 
     
 });

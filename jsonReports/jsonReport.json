@@ -45,7 +45,7 @@
         "testDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
-          "tests/rooms.test.ts"
+          "tests/client.test.ts"
         ],
         "timeout": 30000
       }
@@ -58,13 +58,13 @@
   },
   "suites": [
     {
-      "title": "tests\\rooms.test.ts",
-      "file": "tests/rooms.test.ts",
+      "title": "tests\\client.test.ts",
+      "file": "tests/client.test.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Adding full specified room - and validate on the user side if room was visible",
+          "title": "Pass empty mesasge to the admin",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,37 +78,22 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 4208,
+                  "duration": 2523,
                   "errors": [],
-                  "stdout": [
-                    {
-                      "text": "Current size of image: 576, 864\n"
-                    },
-                    {
-                      "text": "Current text from front page of title room is: Family\n"
-                    },
-                    {
-                      "text": "Current list of room details are: WiFiTVRadioRefreshmentsSafeViews\n"
-                    }
-                  ],
+                  "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-14T16:02:43.827Z",
+                  "startTime": "2023-05-15T15:06:33.994Z",
                   "attachments": [
                     {
                       "name": "video",
                       "contentType": "video/webm",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Adding-full-specified-room---and-validate-on-the-user-side-if-room-was-visible-chrome\\video.webm"
+                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Pass-empty-mesasge-to-the-admin-chrome\\video.webm"
                     },
                     {
                       "name": "screenshot",
                       "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Adding-full-specified-room---and-validate-on-the-user-side-if-room-was-visible-chrome\\test-finished-1.png"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-rooms-Adding-full-specified-room---and-validate-on-the-user-side-if-room-was-visible-chrome\\test-finished-2.png"
+                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Pass-empty-mesasge-to-the-admin-chrome\\test-finished-1.png"
                     }
                   ]
                 }
@@ -116,9 +101,9 @@
               "status": "expected"
             }
           ],
-          "id": "841e33bd07809b12c892-823c8b224bcde63ea8b2",
-          "file": "tests/rooms.test.ts",
-          "line": 66,
+          "id": "eddcac66e3aeb2ef7cdb-c1ef5410e8d2d997ea6f",
+          "file": "tests/client.test.ts",
+          "line": 18,
           "column": 6
         }
       ]

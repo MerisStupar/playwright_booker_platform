@@ -70,12 +70,12 @@ export default class ClientPage {
     await this.getMessage(clientData.message);
   }
 
-    async sendEmptyMessageToAdmin(){
-    await this.getName(``);
-    await this.getEmail(``);
-    await this.getPhone(``);
-    await this.getSubject(``);
-    await this.getMessage(``);
+    async sendEmptyMessageToAdmin(name:string , email:string, phone:string, subject:string, message:string){
+    await this.getName(name);
+    await this.getEmail(email);
+    await this.getPhone(phone);
+    await this.getSubject(subject);
+    await this.getMessage(message);
   }
 
 

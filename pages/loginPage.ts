@@ -75,6 +75,8 @@ export default class LoginPage{
         const fromUserSubject = this.page.locator(`(//div[@class='col-12']//span)[2]`);
         const fromUserMessage = this.page.locator(`(//div[@class='col-12']//p)[3]`);
 
+        const closeButtonPopup = this.page.locator(`button.btn.btn-outline-primary`);
+
         if(isVisible){
             await console.log("Message popup is visible")
         }else{
@@ -89,6 +91,8 @@ export default class LoginPage{
         expect(await fromUserEmail.textContent()).toContain(`Email: ${clientData.email}`);
         expect(await fromUserSubject.textContent()).toContain(`${clientData.subject}`);
         expect(await fromUserMessage.textContent()).toContain(`${clientData.message}`);
+
+        await closeButtonPopup.click();
     }
 
 

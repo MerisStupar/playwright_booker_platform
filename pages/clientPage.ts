@@ -1,5 +1,4 @@
 import { Page, expect } from "@playwright/test";
-import { chromium } from "@playwright/test";
 import * as data from "../data-test/roomData.json";
 import * as clientData from "../data-test/clientData.json";
 
@@ -70,12 +69,30 @@ export default class ClientPage {
     await this.getMessage(clientData.message);
   }
 
-    async sendEmptyMessageToAdmin(name:string , email:string, phone:string, subject:string, message:string){
+    async sendMessagesToAdmin(name:string , email:string, phone:string, subject:string, message:string){
     await this.getName(name);
     await this.getEmail(email);
     await this.getPhone(phone);
     await this.getSubject(subject);
     await this.getMessage(message);
+    await this.clikcSubmitButton();
+  }
+
+  async validateAlertMessage(page, expectedMessages){
+    
+    const alertElement = await this.page.waitForSelector('div.alert.alert-danger');
+    const alertText = await alertElement.innerText();
+
+    // expect(alertText).toContain(expectedMessage);
+    for (const expectedMessage of expectedMessages) {
+      expect(alertText).toContain(expectedMessage);
+    }
+  }
+
+  async performTest(expectedMessages, messageParams) {
+    await this.sendMessagesToAdmin(messageParams[0], messageParams[1], messageParams[2], messageParams[3], messageParams[4]);
+    await this.clikcSubmitButton();
+    await this.validateAlertMessage(this.page, expectedMessages);
   }
 
 

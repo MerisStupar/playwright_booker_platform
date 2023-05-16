@@ -1,5 +1,15 @@
 {
-    "messages": [
+    "messages_empty": [
+      "Message must be between 20 and 2000 characters.",
+      "Message may not be blank",
+      "Subject may not be blank",
+      "Subject must be between 5 and 100 characters.",
+      "Email may not be blank",
+      "Phone may not be blank",
+      "Phone must be between 11 and 21 characters.",
+      "Name may not be blank"
+    ],
+    "messages_enteredName": [
       "Message must be between 20 and 2000 characters.",
       "Message may not be blank",
       "Subject may not be blank",
@@ -7,6 +17,24 @@
       "Email may not be blank",
       "Phone may not be blank",
       "Phone must be between 11 and 21 characters."
+    ],
+    "messages_enteredEmail":[
+      "Message must be between 20 and 2000 characters.",
+      "Message may not be blank",
+      "Subject may not be blank",
+      "Subject must be between 5 and 100 characters.",
+      "Phone may not be blank",
+      "Phone must be between 11 and 21 characters."
+    ],
+    "messages_enteredPhone":[
+      "Message must be between 20 and 2000 characters.",
+      "Message may not be blank",
+      "Subject may not be blank",
+      "Subject must be between 5 and 100 characters."
+    ],
+    "messages_enteredSubject":[
+      "Message must be between 20 and 2000 characters.",
+      "Message may not be blank"
     ]
   }
   

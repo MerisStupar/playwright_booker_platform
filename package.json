@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "test:api": "npx playwright test --config=playwrightAPI.config.ts"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "dotenv": "^16.0.3"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "node": "^20.1.0"
   }
 }

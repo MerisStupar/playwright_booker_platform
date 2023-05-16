@@ -76,20 +76,4 @@ test.describe('Validate all alert message - send message', ()=>{
 
     });
 
-    test('Pass all related data- TC 6', async ({page, clientPage }) => {
-        
-
-        await clientPage.sendMessagesToAdmin(`Meris`, `meris@1secmail.com`, `1234567891234`, `Test Subject`, `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`);
-
-
-        const messageLocator = page.locator(`div.col-sm-5 h2`);
-        const expectedText = `Thanks for getting in touch Meris`;
-
-        await messageLocator.waitFor({timeout: 1000});
-        await messageLocator.isVisible();
-        expect(await messageLocator.textContent()).toContain(expectedText)
-
-    });
-
-
 })

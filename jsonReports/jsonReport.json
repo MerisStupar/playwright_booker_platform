@@ -45,7 +45,7 @@
         "testDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
-          "tests/API/auth.test.ts"
+          "tests/API/auth2.test.ts"
         ],
         "timeout": 30000
       }
@@ -53,56 +53,119 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.33.0",
-    "workers": 1,
+    "workers": 3,
     "webServer": null
   },
   "suites": [
     {
-      "title": "tests\\API\\auth.test.ts",
-      "file": "tests/API/auth.test.ts",
+      "title": "tests\\API\\auth2.test.ts",
+      "file": "tests/API/auth2.test.ts",
       "column": 0,
       "line": 0,
-      "specs": [],
-      "suites": [
+      "specs": [
         {
-          "title": "booking/ GET requests",
-          "file": "tests/API/auth.test.ts",
-          "line": 3,
-          "column": 6,
-          "specs": [
+          "title": "Get TOKEN - Auth ",
+          "ok": true,
+          "tags": [],
+          "tests": [
             {
-              "title": "GET all bookings with details",
-              "ok": true,
-              "tags": [],
-              "tests": [
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
                 {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chrome",
-                  "projectName": "chrome",
-                  "results": [
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 252,
+                  "errors": [],
+                  "stdout": [
                     {
-                      "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 214,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2023-05-16T20:42:44.444Z",
-                      "attachments": []
+                      "text": "token=bp8wNyM8JKJENXej; Path=/\n"
                     }
                   ],
-                  "status": "expected"
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-17T08:45:14.546Z",
+                  "attachments": []
                 }
               ],
-              "id": "acad76b8e0d3a3496aeb-8b207ea38ee2358ba9a5",
-              "file": "tests/API/auth.test.ts",
-              "line": 23,
-              "column": 7
+              "status": "expected"
             }
-          ]
+          ],
+          "id": "ce4d0df8194ca465475b-38106a4a9070c09b46f6",
+          "file": "tests/API/auth2.test.ts",
+          "line": 6,
+          "column": 5
+        },
+        {
+          "title": "GET Booking",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 216,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-17T08:45:14.562Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ce4d0df8194ca465475b-564147cc99af31e28a34",
+          "file": "tests/API/auth2.test.ts",
+          "line": 27,
+          "column": 5
+        },
+        {
+          "title": "GET Booking with ENV",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 244,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  bookings: [\n    {\n      bookingid: \u001b[33m1\u001b[39m,\n      roomid: \u001b[33m1\u001b[39m,\n      firstname: \u001b[32m'James'\u001b[39m,\n      lastname: \u001b[32m'Dean'\u001b[39m,\n      depositpaid: \u001b[33mtrue\u001b[39m,\n      bookingdates: \u001b[36m[Object]\u001b[39m\n    }\n  ]\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-17T08:45:14.571Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ce4d0df8194ca465475b-b7c9720f55284153e8b8",
+          "file": "tests/API/auth2.test.ts",
+          "line": 38,
+          "column": 5
         }
       ]
     }

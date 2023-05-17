@@ -22,12 +22,9 @@ const config: PlaywrightTestConfig = {
         // }
     ],
 
-    testMatch: ["tests/API/auth2.test.ts"],
+    testMatch: ["tests/API/auth.test.ts"],
     use: {
         baseURL: "https://automationintesting.online",
-        extraHTTPHeaders: {
-            'Authorization': 'token =xGc9YmI3Jwg2gDhK'
-        },
         headless: false,
         screenshot: "on",
         video: "on",

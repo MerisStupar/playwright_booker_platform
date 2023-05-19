@@ -45,7 +45,7 @@
         "testDir": "C:/Users/ZIRA/Desktop/Repo/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
-          "tests/API/auth2.test.ts"
+          "tests/client.test.ts"
         ],
         "timeout": 30000
       }
@@ -58,13 +58,13 @@
   },
   "suites": [
     {
-      "title": "tests\\API\\auth2.test.ts",
-      "file": "tests/API/auth2.test.ts",
+      "title": "tests\\client.test.ts",
+      "file": "tests/client.test.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "GET Booking with ENV",
+          "title": "Sending message to the admin - validate from admin",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,25 +78,50 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 271,
+                  "duration": 4954,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "{\n  bookings: [\n    {\n      bookingid: \u001b[33m1\u001b[39m,\n      roomid: \u001b[33m1\u001b[39m,\n      firstname: \u001b[32m'James'\u001b[39m,\n      lastname: \u001b[32m'Dean'\u001b[39m,\n      depositpaid: \u001b[33mtrue\u001b[39m,\n      bookingdates: \u001b[36m[Object]\u001b[39m\n    }\n  ]\n}\n"
+                      "text": "Current text: Thanks for getting in touch Meris Test! \n This is the Subject: Hello World!\n"
+                    },
+                    {
+                      "text": "This should be URL from messages: https://automationintesting.online/#/admin/messages\n"
+                    },
+                    {
+                      "text": "Meris TestThis is the Subject: Hello World!\n"
+                    },
+                    {
+                      "text": "Message popup is visible\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-19T13:54:36.422Z",
-                  "attachments": []
+                  "startTime": "2023-05-19T14:20:29.711Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "C:\\Users\\ZIRA\\Desktop\\Repo\\playwright_booker_platform\\test-results\\tests-client-Sending-message-to-the-admin---validate-from-admin-chrome\\video.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\ZIRA\\Desktop\\Repo\\playwright_booker_platform\\test-results\\tests-client-Sending-message-to-the-admin---validate-from-admin-chrome\\test-finished-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\ZIRA\\Desktop\\Repo\\playwright_booker_platform\\test-results\\tests-client-Sending-message-to-the-admin---validate-from-admin-chrome\\test-finished-2.png"
+                    }
+                  ]
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "ce4d0df8194ca465475b-b7c9720f55284153e8b8",
-          "file": "tests/API/auth2.test.ts",
-          "line": 47,
+          "id": "eddcac66e3aeb2ef7cdb-b3b6dd8eecf05a2cef13",
+          "file": "tests/client.test.ts",
+          "line": 19,
           "column": 6
         }
       ]

@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
-test('POST with empty token', async ({ request }) => {
-    const response = await request.post('https://automationintesting.online/auth/validate', {
+test('POST with empty token', async ({ request, baseURL }) => {
+    const response = await request.post(`${baseURL}/auth/validate`, {
         data: {
             token: ""
         },
@@ -16,14 +16,13 @@ test('POST with empty token', async ({ request }) => {
 
 
 
-test('Get TOKEN - Auth ', async ({ request }) => {
+test('Get TOKEN - Auth ', async ({ request, baseURL }) => {
 
-    const response = await request.post("https://automationintesting.online/auth/login", {
-
+    const response = await request.post(`${baseURL}/auth/login`, {
         data: {
-            username: process.env.USERNAM_OF_ADMIN!,
-            password: process.env.PASSWORD_OF_ADMIN!
-        }
+            username: "admin",
+            password: "password"
+        },
     });
 
     expect(response.status()).toBe(200);
@@ -33,21 +32,8 @@ test('Get TOKEN - Auth ', async ({ request }) => {
 
 });
 
-
-test('GET Booking', async ({ request }) => {
-    const savedToken = "4hncxY08ctoDYJMN";
-    const response = await request.get("https://automationintesting.online/booking/", {
-        headers: { cookie: `token=${savedToken}` },
-      });
-    expect(response.status()).toBe(200);
-});
-
-
-
-test.only('GET Booking with ENV', async ({ request }) => {
-    const response = await request.get("https://automationintesting.online/booking/", {
-        // headers: { cookie: `token=${process.env.SAVEDTOKEN!}` },
-      });
+test('GET Booking with ENV', async ({ request, baseURL }) => {
+    const response = await request.get(`${baseURL}/booking`, { headers:{} });
     expect(response.status()).toBe(200);
     const body = await response.json();
 

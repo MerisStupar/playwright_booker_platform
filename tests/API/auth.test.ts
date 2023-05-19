@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
-
-test.describe("booking/ GET requests", async () => {
+//! Pitanje kako prebaciti ovo na config da se samo mijenja?
+test.describe("Booking - GET requests", async () => {
 
   let _cookies;
 
@@ -18,20 +18,11 @@ test.describe("booking/ GET requests", async () => {
     const headers = await response.headers();
 
     _cookies = headers["set-cookie"];
-
-
-  })
-
-  test('Proba', async ({ page }) => {
-    console.log(process.env.API_TOKEN);
-    console.log(_cookies);
   });
 
 
 
   test("GET all bookings with details", async ({ request }) => {
-
-    
 
     const response = await request.get("booking/", {
       headers: {

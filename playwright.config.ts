@@ -23,7 +23,8 @@ const config: PlaywrightTestConfig = {
     ],
 
     //Obratiti paznju na testove koji se pokrecu
-    testMatch: ["tests/API/auth2.test.ts"],
+    testMatch: ["tests/client.test.ts"],
+    // testMatch: ["tests/API/auth2.test.ts"],
     use: {
         baseURL: "https://automationintesting.online",
         headless: false,

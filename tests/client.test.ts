@@ -16,7 +16,7 @@ test.beforeEach(async ({ page, baseURL }) => {
 
 //? Slanje poruke i provjera poruke od strane admina
 //! Sending message to the Admin from frontpage - then validate on admin panel
-test('Sending message to the admin - validate from admin', async ({ clientPage }) => {
+test.only('Sending message to the admin - validate from admin', async ({ clientPage }) => {
     
     const { page } = await launchBrowser();
     const loginPage = new LoginPage(page);
@@ -25,7 +25,7 @@ test('Sending message to the admin - validate from admin', async ({ clientPage }
     await clientPage.clikcSubmitButton();
     await clientPage.validateMessageToAdmin();
 
-    await loginPage.loginAdmin(process.env.USERNAM_OF_ADMIN!, process.env.PASSWORD_OF_ADMIN!);
+    await loginPage.loginAdmin(process.env.USERNAME_OF_ADMIN!, process.env.PASSWORD_OF_ADMIN!);
     
     await loginPage.openMessagePage();
     await loginPage.openUnreadMessage();

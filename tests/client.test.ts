@@ -10,13 +10,23 @@ const launchBrowser = async () => {
     return { browser, context, page };
   };
 
+
+test.beforeAll(async () =>{
+    console.log('********** TEST HAS STARTED **********');
+});
+
+
+test.afterAll(async () =>{
+    console.log('********** TEST IS FINISHED **********');
+});
+
 test.beforeEach(async ({ page, baseURL }) => {
     await page.goto(`${baseURL}`);
 });
 
 //? Slanje poruke i provjera poruke od strane admina
 //! Sending message to the Admin from frontpage - then validate on admin panel
-test.only('Sending message to the admin - validate from admin', async ({ clientPage }) => {
+test('Sending message to the admin - validate from admin', async ({ clientPage }) => {
     
     const { page } = await launchBrowser();
     const loginPage = new LoginPage(page);

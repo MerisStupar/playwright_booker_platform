@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "test:api": "npx playwright test --config=playwrightAPI.config.ts"
+    "test:api": "npx playwright test tests/API/auth2.test.ts"
   },
   "repository": {
     "type": "git",

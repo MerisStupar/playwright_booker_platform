@@ -44,9 +44,9 @@ test('GET Booking', async ({ request }) => {
 
 
 
-test('GET Booking with ENV', async ({ request }) => {
+test.only('GET Booking with ENV', async ({ request }) => {
     const response = await request.get("https://automationintesting.online/booking/", {
-        headers: { cookie: `token=${process.env.SAVEDTOKEN!}` },
+        // headers: { cookie: `token=${process.env.SAVEDTOKEN!}` },
       });
     expect(response.status()).toBe(200);
     const body = await response.json();

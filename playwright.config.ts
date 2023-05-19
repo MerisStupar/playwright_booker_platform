@@ -22,13 +22,18 @@ const config: PlaywrightTestConfig = {
         // }
     ],
 
-
-    testMatch: ["tests/client.test.ts"],
+    //Obratiti paznju na testove koji se pokrecu
+    testMatch: ["tests/API/auth2.test.ts"],
     use: {
         baseURL: "https://automationintesting.online",
         headless: false,
         screenshot: "on",
         video: "on",
+        //Ovdje promijeniti api token ako pada
+        extraHTTPHeaders: {
+            'Accept': 'application/json',
+            'Cookie': `token=${process.env.API_TOKEN}`
+        },
         
     },
     

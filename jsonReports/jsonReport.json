@@ -45,7 +45,7 @@
         "testDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
-          "tests/client.test.ts"
+          "tests/API/room.test.ts"
         ],
         "timeout": 30000
       }
@@ -53,18 +53,18 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.33.0",
-    "workers": 3,
+    "workers": 2,
     "webServer": null
   },
   "suites": [
     {
-      "title": "tests\\client.test.ts",
-      "file": "tests/client.test.ts",
+      "title": "tests\\API\\room.test.ts",
+      "file": "tests/API/room.test.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Sending message to the admin - validate from admin",
+          "title": "Healt Check ",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,304 +78,54 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 7327,
+                  "duration": 473,
                   "errors": [],
-                  "stdout": [
-                    {
-                      "text": "********** TEST HAS STARTED **********\n"
-                    },
-                    {
-                      "text": "Current text: Thanks for getting in touch Meris Test! \n This is the Subject: Hello World!\n"
-                    },
-                    {
-                      "text": "This should be URL from messages: https://automationintesting.online/#/admin/messages\n"
-                    },
-                    {
-                      "text": "Meris TestThis is the Subject: Hello World!\n"
-                    },
-                    {
-                      "text": "Message popup is visible\n"
-                    }
-                  ],
+                  "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-19T15:06:17.891Z",
-                  "attachments": [
-                    {
-                      "name": "video",
-                      "contentType": "video/webm",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Sending-message-to-the-admin---validate-from-admin-chrome\\video.webm"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Sending-message-to-the-admin---validate-from-admin-chrome\\test-finished-1.png"
-                    },
-                    {
-                      "name": "screenshot",
-                      "contentType": "image/png",
-                      "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Sending-message-to-the-admin---validate-from-admin-chrome\\test-finished-2.png"
-                    }
-                  ]
+                  "startTime": "2023-05-20T17:03:52.838Z",
+                  "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "eddcac66e3aeb2ef7cdb-b3b6dd8eecf05a2cef13",
-          "file": "tests/client.test.ts",
-          "line": 29,
+          "id": "dfb350517123a92aafbf-9a478c3be2b1a575abb4",
+          "file": "tests/API/room.test.ts",
+          "line": 5,
           "column": 5
-        }
-      ],
-      "suites": [
+        },
         {
-          "title": "Validate all alert message - send message",
-          "file": "tests/client.test.ts",
-          "line": 47,
-          "column": 6,
-          "specs": [
+          "title": "Create room ",
+          "ok": true,
+          "tags": [],
+          "tests": [
             {
-              "title": "Pass empty mesasge to the admin - TC 1",
-              "ok": true,
-              "tags": [],
-              "tests": [
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
                 {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chrome",
-                  "projectName": "chrome",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "status": "passed",
-                      "duration": 1686,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "********** TEST IS FINISHED **********\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2023-05-19T15:06:26.886Z",
-                      "attachments": [
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Validate-all-alert-message---send-message-Pass-empty-mesasge-to-the-admin---TC-1-chrome\\video.webm"
-                        },
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Validate-all-alert-message---send-message-Pass-empty-mesasge-to-the-admin---TC-1-chrome\\test-finished-1.png"
-                        },
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Validate-all-alert-message---send-message-Pass-empty-mesasge-to-the-admin---TC-1-chrome\\test-finished-2.png"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 262,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-20T17:03:52.831Z",
+                  "attachments": []
                 }
               ],
-              "id": "eddcac66e3aeb2ef7cdb-4e65b44a4755c69b22d8",
-              "file": "tests/client.test.ts",
-              "line": 49,
-              "column": 9
-            },
-            {
-              "title": "Pass only name to message - TC 2",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chrome",
-                  "projectName": "chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "status": "passed",
-                      "duration": 2929,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "********** TEST HAS STARTED **********\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2023-05-19T15:06:17.889Z",
-                      "attachments": [
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Validate-all-alert-message---send-message-Pass-only-name-to-message---TC-2-chrome\\video.webm"
-                        },
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Validate-all-alert-message---send-message-Pass-only-name-to-message---TC-2-chrome\\test-finished-1.png"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "eddcac66e3aeb2ef7cdb-6b649892d1a40742d6d9",
-              "file": "tests/client.test.ts",
-              "line": 57,
-              "column": 9
-            },
-            {
-              "title": "Pass only name and email to message - TC 3",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chrome",
-                  "projectName": "chrome",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "status": "passed",
-                      "duration": 2316,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "********** TEST IS FINISHED **********\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2023-05-19T15:06:21.796Z",
-                      "attachments": [
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Validate-all-alert-message---send-message-Pass-only-name-and-email-to-message---TC-3-chrome\\video.webm"
-                        },
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Validate-all-alert-message---send-message-Pass-only-name-and-email-to-message---TC-3-chrome\\test-finished-1.png"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "eddcac66e3aeb2ef7cdb-87f47b97fa977329201c",
-              "file": "tests/client.test.ts",
-              "line": 65,
-              "column": 9
-            },
-            {
-              "title": "Pass name, email and phone  to message - TC 4",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chrome",
-                  "projectName": "chrome",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "status": "passed",
-                      "duration": 3067,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "********** TEST HAS STARTED **********\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2023-05-19T15:06:17.888Z",
-                      "attachments": [
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Validate-all-alert-message---send-message-Pass-name-email-and-phone-to-message---TC-4-chrome\\video.webm"
-                        },
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Validate-all-alert-message---send-message-Pass-name-email-and-phone-to-message---TC-4-chrome\\test-finished-1.png"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "eddcac66e3aeb2ef7cdb-c754ba52d27b2179c951",
-              "file": "tests/client.test.ts",
-              "line": 73,
-              "column": 9
-            },
-            {
-              "title": "Pass name, email, phone and subject  to message - TC 5",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chrome",
-                  "projectName": "chrome",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "status": "passed",
-                      "duration": 2859,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "********** TEST IS FINISHED **********\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2023-05-19T15:06:22.097Z",
-                      "attachments": [
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Validate-all-alert-message---send-dcf82--name-email-phone-and-subject-to-message---TC-5-chrome\\video.webm"
-                        },
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\test-results\\tests-client-Validate-all-alert-message---send-dcf82--name-email-phone-and-subject-to-message---TC-5-chrome\\test-finished-1.png"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "eddcac66e3aeb2ef7cdb-18115068259f86e12bd5",
-              "file": "tests/client.test.ts",
-              "line": 81,
-              "column": 9
+              "status": "expected"
             }
-          ]
+          ],
+          "id": "dfb350517123a92aafbf-1914d637816947303efd",
+          "file": "tests/API/room.test.ts",
+          "line": 13,
+          "column": 5
         }
       ]
     }

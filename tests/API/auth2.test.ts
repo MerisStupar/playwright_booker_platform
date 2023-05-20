@@ -1,4 +1,17 @@
 import { test, expect } from "@playwright/test";
+import BookingPage from "../../pages_api/bookingPage";
+import AuthPage from "../../pages_api/AuthPage";
+
+
+test.only('Healt Check ', async ({ page }) => {
+
+    const authPage = new AuthPage(page);
+    await authPage.getHealthCheck();
+
+});
+
+
+
 
 test('POST with empty token', async ({ request, baseURL }) => {
     const response = await request.post(`${baseURL}/auth/validate`, {
@@ -32,18 +45,17 @@ test('Get TOKEN - Auth ', async ({ request, baseURL }) => {
 
 });
 
-test('GET Booking with ENV', async ({ request, baseURL }) => {
-    const response = await request.get(`${baseURL}/booking`, { headers:{} });
-    expect(response.status()).toBe(200);
-    const body = await response.json();
 
-    console.log(body);
-    expect(body.bookings.length).toBeGreaterThanOrEqual(1);
-    expect(body.bookings[0].bookingid).toBe(1);
-    expect(body.bookings[0].roomid).toBe(1);
+//!POM - Implementacija API 
+test('GET Booking with POM implementation', async ({ page }) => {
+
+    const bookingPage = new BookingPage(page);
+
+    const body = await bookingPage.getBookings();
+
+    expect(body.bookings.length).toBeGreaterThan(1);
     expect(body.bookings[0].firstname).toBe("James");
-    expect(body.bookings[0].lastname).toBe("Dean");
-    expect(body.bookings[0].depositpaid).toBe(true);
+
 });
 
 

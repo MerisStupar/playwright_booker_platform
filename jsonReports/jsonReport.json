@@ -53,7 +53,7 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.33.0",
-    "workers": 2,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
@@ -63,38 +63,6 @@
       "column": 0,
       "line": 0,
       "specs": [
-        {
-          "title": "Healt Check ",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chrome",
-              "projectName": "chrome",
-              "results": [
-                {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 473,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-20T17:03:52.838Z",
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "dfb350517123a92aafbf-9a478c3be2b1a575abb4",
-          "file": "tests/API/room.test.ts",
-          "line": 5,
-          "column": 5
-        },
         {
           "title": "Create room ",
           "ok": true,
@@ -108,14 +76,18 @@
               "projectName": "chrome",
               "results": [
                 {
-                  "workerIndex": 1,
+                  "workerIndex": 0,
                   "status": "passed",
-                  "duration": 262,
+                  "duration": 878,
                   "errors": [],
-                  "stdout": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m4\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-20T17:03:52.831Z",
+                  "startTime": "2023-05-21T19:50:54.809Z",
                   "attachments": []
                 }
               ],
@@ -124,7 +96,7 @@
           ],
           "id": "dfb350517123a92aafbf-1914d637816947303efd",
           "file": "tests/API/room.test.ts",
-          "line": 13,
+          "line": 7,
           "column": 5
         }
       ]

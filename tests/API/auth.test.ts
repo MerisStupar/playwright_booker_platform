@@ -33,12 +33,6 @@ test.describe("Booking - GET requests", async () => {
     expect(response.status()).toBe(200);
     const body = await response.json();
     console.log(body)
-    // expect(body.bookings.length).toBeGreaterThanOrEqual(1);
-    // expect(body.bookings[0].bookingid).toBe(1);
-    // expect(body.bookings[0].roomid).toBe(1);
-    // expect(body.bookings[0].firstname).toBe("James");
-    // expect(body.bookings[0].lastname).toBe("Dean");
-    // expect(body.bookings[0].depositpaid).toBe(true);
   });
 
 });

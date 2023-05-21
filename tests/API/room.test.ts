@@ -1,33 +1,22 @@
 import { test, expect } from "@playwright/test";
-import AuthPage from "../../pages_api/AuthPage";
+import RoomsPage from "../../pages_api/RoomsPage";
+import * as roomData from "../../data-test/roomDataAPI.json";
 
 
-test('Healt Check ', async ({ page }) => {
 
-    const authPage = new AuthPage(page);
-    await authPage.getHealthCheck();
+test('Create room ', async ({ page }) => {
 
-});
+    const roomPage = new RoomsPage(page);
 
+    await roomPage.getHealthCheckRoom();
+    await roomPage.createRoom();
 
-test('Create room ', async ({ request }) => {
     
-    const response = await request.post(`/room/`, {
-        data:{
-            "roomName": "Playwrihgt API",
-            "type": "Suite",
-            "accessible": true,
-            "image": "https://blog.postman.com/wp-content/uploads/2014/07/logo.png",
-            "description": "This is room 101, dare you enter?",
-            "roomPrice": 500,
-            "features": [
-              "WiFi", "Safe"
-            ]
-        },
-    });
+    const bodyRoom = await roomPage.getRoom();
+    expect(bodyRoom.rooms[1].roomid).toBe(2);
+    expect(bodyRoom.rooms[1].roomName).toBe(roomData.roomName);
 
 
-    expect(response.status()).toBe(201);
 
 
 });

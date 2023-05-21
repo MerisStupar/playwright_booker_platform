@@ -32,7 +32,7 @@ const config: PlaywrightTestConfig = {
         video: "off",
         //Ovdje promijeniti api token ako pada
         extraHTTPHeaders: {
-            'Accept': 'application/json',
+            'Content-Type': 'application/json',
             'Cookie': `token=${process.env.API_TOKEN!}`
         },
         

@@ -88,6 +88,7 @@ export default class ClientPage {
       expect(alertText).toContain(expectedMessage);
     }
   }
+  
 
   async performTest(expectedMessages, messageParams) {
     await this.sendMessagesToAdmin(messageParams[0], messageParams[1], messageParams[2], messageParams[3], messageParams[4]);

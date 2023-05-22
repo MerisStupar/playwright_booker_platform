@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Users\\ZIRA\\Desktop\\Repo\\playwright_booker_platform\\playwright.config.ts",
-    "rootDir": "C:/Users/ZIRA/Desktop/Repo/playwright_booker_platform",
+    "configFile": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\playwright.config.ts",
+    "rootDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -37,15 +37,15 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Users/ZIRA/Desktop/Repo/playwright_booker_platform/test-results",
+        "outputDir": "C:/Users/Meris/Desktop/playwright_booker_platform/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "id": "chrome",
-        "name": "chrome",
-        "testDir": "C:/Users/ZIRA/Desktop/Repo/playwright_booker_platform",
+        "id": "Chrome",
+        "name": "Chrome",
+        "testDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
-          "tests/API/room.test.ts"
+          "tests/API/authBasic.test.ts"
         ],
         "timeout": 30000
       }
@@ -58,13 +58,13 @@
   },
   "suites": [
     {
-      "title": "tests\\API\\room.test.ts",
-      "file": "tests/API/room.test.ts",
+      "title": "tests\\API\\authBasic.test.ts",
+      "file": "tests/API/authBasic.test.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Create room ",
+          "title": "Get TOKEN - Auth ",
           "ok": true,
           "tags": [],
           "tests": [
@@ -72,32 +72,32 @@
               "timeout": 30000,
               "annotations": [],
               "expectedStatus": "passed",
-              "projectId": "chrome",
-              "projectName": "chrome",
+              "projectId": "Chrome",
+              "projectName": "Chrome",
               "results": [
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 973,
+                  "duration": 920,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "{\n  roomid: \u001b[33m2\u001b[39m,\n  roomName: \u001b[32m'M.Room'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is M.room, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                      "text": "token=2zjAGQvQr8UuR8bf; Path=/\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-22T08:39:22.153Z",
+                  "startTime": "2023-05-22T18:26:25.580Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "dfb350517123a92aafbf-1914d637816947303efd",
-          "file": "tests/API/room.test.ts",
-          "line": 13,
-          "column": 5
+          "id": "10b0ad472df95ae32e81-8b83112d791cbc0b1400",
+          "file": "tests/API/authBasic.test.ts",
+          "line": 62,
+          "column": 6
         }
       ]
     }

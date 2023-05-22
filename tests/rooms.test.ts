@@ -15,7 +15,7 @@ const launchBrowser = async () => {
 
 test.beforeEach(async ({ page, baseURL, loginPage }) => {
     await page.goto(`${baseURL}/#/admin`);
-    await loginPage.loginAdmin(process.env.USERNAM_OF_ADMIN!, process.env.PASSWORD_OF_ADMIN!);
+    await loginPage.loginAdmin(process.env.USERNAME_OF_ADMIN!, process.env.PASSWORD_OF_ADMIN!);
 });
 
 test('Creating room with empty data', async ({ roomsPage }) => {

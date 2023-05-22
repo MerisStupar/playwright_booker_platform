@@ -11,15 +11,6 @@ const launchBrowser = async () => {
   };
 
 
-test.beforeAll(async () =>{
-    console.log('********** TEST HAS STARTED **********');
-});
-
-
-test.afterAll(async () =>{
-    console.log('********** TEST IS FINISHED **********');
-});
-
 test.beforeEach(async ({ page, baseURL }) => {
     await page.goto(`${baseURL}`);
 });

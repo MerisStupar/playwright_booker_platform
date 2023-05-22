@@ -14,7 +14,7 @@ const launchBrowser = async () => {
 
 test.beforeEach(async ({ page, baseURL, loginPage }) => {
     await page.goto(`${baseURL}/#/admin/branding`);
-    await loginPage.loginAdmin(process.env.USERNAM_OF_ADMIN!, process.env.PASSWORD_OF_ADMIN!);
+    await loginPage.loginAdmin(process.env.USERNAME_OF_ADMIN!, process.env.PASSWORD_OF_ADMIN!);
   
 });
 
@@ -150,7 +150,7 @@ test("B&B Name field - passing empty", async ({ page, baseURL, brandingPage }) =
 
   });
 
-test.only('Logo field - passing emtpy', async ({ page, baseURL, brandingPage }) => {
+test('Logo field - passing emtpy', async ({ page, baseURL, brandingPage }) => {
 
     await page.goto(`${baseURL}/#/admin/branding`);
     await brandingPage.logoField.scrollIntoViewIfNeeded();
@@ -163,7 +163,7 @@ test.only('Logo field - passing emtpy', async ({ page, baseURL, brandingPage }) 
   
 
 
-test('B&B Logo field - validate on the front page - POM', async ({ baseURL, brandingPage }) => {
+test.only('B&B Logo field - validate on the front page - POM', async ({ baseURL, brandingPage }) => {
   
     const { page } = await launchBrowser();
     const clientPage = new ClientPage(page);

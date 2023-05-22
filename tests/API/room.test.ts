@@ -15,12 +15,15 @@ test('Create room ', async ({ page }) => {
     const roomPage = new RoomsPage(page);
 
     await roomPage.getHealthCheckRoom();
+    //Creating room from admin side
     await roomPage.createRoom();
 
     
+    //Validate on front page that room is visible
     const bodyRoom = await roomPage.getRoom();
     const lastIndex = bodyRoom.rooms.length - 1;
     const lastRoom = bodyRoom.rooms[lastIndex];
+
 
     // console.log(bodyRoom.rooms.lenght);
     expect(lastRoom.roomName).toBe(roomData.roomName)

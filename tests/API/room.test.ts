@@ -3,6 +3,12 @@ import RoomsPage from "../../pages_api/RoomsPage";
 import * as roomData from "../../data-test/roomDataAPI.json";
 
 
+test.beforeEach(async ({ page }) => {
+    const roomPage = new RoomsPage(page);
+    await roomPage.getHealthCheckRoom();
+
+});
+
 
 test('Create room ', async ({ page }) => {
 
@@ -13,8 +19,13 @@ test('Create room ', async ({ page }) => {
 
     
     const bodyRoom = await roomPage.getRoom();
-    expect(bodyRoom.rooms[1].roomid).toBe(2);
-    expect(bodyRoom.rooms[1].roomName).toBe(roomData.roomName);
+    const lastIndex = bodyRoom.rooms.length - 1;
+    const lastRoom = bodyRoom.rooms[lastIndex];
+
+    // console.log(bodyRoom.rooms.lenght);
+    expect(lastRoom.roomName).toBe(roomData.roomName)
+    expect(lastRoom.image).toBe(roomData.image);
+    expect(lastRoom.roomPrice).toBe(roomData.roomPrice);
 
 
 

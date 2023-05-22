@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\playwright.config.ts",
-    "rootDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
+    "configFile": "C:\\Users\\ZIRA\\Desktop\\Repo\\playwright_booker_platform\\playwright.config.ts",
+    "rootDir": "C:/Users/ZIRA/Desktop/Repo/playwright_booker_platform",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -37,12 +37,12 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Users/Meris/Desktop/playwright_booker_platform/test-results",
-        "repeatEach": 1,
+        "outputDir": "C:/Users/ZIRA/Desktop/Repo/playwright_booker_platform/test-results",
+        "repeatEach": 20,
         "retries": 0,
         "id": "chrome",
         "name": "chrome",
-        "testDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
+        "testDir": "C:/Users/ZIRA/Desktop/Repo/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
           "tests/API/room.test.ts"
@@ -53,7 +53,7 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.33.0",
-    "workers": 1,
+    "workers": 4,
     "webServer": null
   },
   "suites": [
@@ -78,16 +78,491 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 878,
+                  "duration": 1713,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "{\n  roomid: \u001b[33m4\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                      "text": "{\n  roomid: \u001b[33m34\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-21T19:50:54.809Z",
+                  "startTime": "2023-05-22T07:36:57.371Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 1585,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m35\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:36:57.432Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 1694,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m33\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:36:57.421Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "status": "passed",
+                  "duration": 1397,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m36\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:36:57.528Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "status": "passed",
+                  "duration": 1440,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m39\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:01.621Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "status": "passed",
+                  "duration": 1363,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m37\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:01.620Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "status": "passed",
+                  "duration": 1564,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m40\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:01.654Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "status": "passed",
+                  "duration": 1357,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m38\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:01.624Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "status": "passed",
+                  "duration": 1349,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m41\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:05.163Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "status": "passed",
+                  "duration": 1281,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m42\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:05.496Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "status": "passed",
+                  "duration": 1114,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m44\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:05.530Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "status": "passed",
+                  "duration": 1392,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m43\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:05.478Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "status": "passed",
+                  "duration": 1201,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m45\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:08.535Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "status": "passed",
+                  "duration": 1505,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m46\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:09.388Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "status": "passed",
+                  "duration": 1499,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m47\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:09.475Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "status": "passed",
+                  "duration": 1407,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m48\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:09.429Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "status": "passed",
+                  "duration": 1105,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m49\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:12.102Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "status": "passed",
+                  "duration": 1171,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m50\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:13.213Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 19,
+                  "status": "passed",
+                  "duration": 1376,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m52\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:13.831Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "status": "passed",
+                  "duration": 1439,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{\n  roomid: \u001b[33m51\u001b[39m,\n  roomName: \u001b[32m'B.Room - 2'\u001b[39m,\n  type: \u001b[32m'Family'\u001b[39m,\n  accessible: \u001b[33mtrue\u001b[39m,\n  image: \u001b[32m'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80'\u001b[39m,\n  description: \u001b[32m'This is room 101, posted by automation tester?'\u001b[39m,\n  features: [ \u001b[32m'WiFi'\u001b[39m, \u001b[32m'Safe'\u001b[39m ],\n  roomPrice: \u001b[33m500\u001b[39m\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-22T07:37:13.739Z",
                   "attachments": []
                 }
               ],
@@ -96,7 +571,7 @@
           ],
           "id": "dfb350517123a92aafbf-1914d637816947303efd",
           "file": "tests/API/room.test.ts",
-          "line": 7,
+          "line": 13,
           "column": 5
         }
       ]

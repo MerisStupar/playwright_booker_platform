@@ -18,12 +18,7 @@ test('Post without username', async ({ request, baseURL }) => {
             password: "password"
         },
     });
-
     expect(response.status()).toBe(403);
-
-    const headers = await response.headers();
-    console.log(headers['set-cookie']);
-
 });
 
 
@@ -36,12 +31,7 @@ test('Post without password', async ({ request, baseURL }) => {
             password: ""
         },
     });
-
     expect(response.status()).toBe(403);
-
-    const headers = await response.headers();
-    console.log(headers['set-cookie']);
-
 });
 
 test('POST with empty token', async ({ request, baseURL }) => {
@@ -59,7 +49,7 @@ test('POST with empty token', async ({ request, baseURL }) => {
 
 
 
-test.only('Get TOKEN - Auth ', async ({ request, baseURL }) => {
+test('Get TOKEN - Auth ', async ({ request, baseURL }) => {
     
     let cookie="";
 

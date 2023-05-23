@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\playwright.config.ts",
-    "rootDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
+    "configFile": "C:\\Users\\ZIRA\\Desktop\\Repo\\playwright_booker_platform\\playwright.config.ts",
+    "rootDir": "C:/Users/ZIRA/Desktop/Repo/playwright_booker_platform",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -37,12 +37,12 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Users/Meris/Desktop/playwright_booker_platform/test-results",
+        "outputDir": "C:/Users/ZIRA/Desktop/Repo/playwright_booker_platform/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "Chrome",
         "name": "Chrome",
-        "testDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
+        "testDir": "C:/Users/ZIRA/Desktop/Repo/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
           "tests/API/authBasic.test.ts"
@@ -53,7 +53,7 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.33.0",
-    "workers": 1,
+    "workers": 4,
     "webServer": null
   },
   "suites": [
@@ -64,7 +64,7 @@
       "line": 0,
       "specs": [
         {
-          "title": "Get TOKEN - Auth ",
+          "title": "Post without username",
           "ok": true,
           "tags": [],
           "tests": [
@@ -78,16 +78,120 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 920,
+                  "duration": 1504,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "token=2zjAGQvQr8UuR8bf; Path=/\n"
+                      "text": "\u001b[90mundefined\u001b[39m\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-22T18:26:25.580Z",
+                  "startTime": "2023-05-23T09:12:42.959Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "10b0ad472df95ae32e81-68e368d0d23d52716abe",
+          "file": "tests/API/authBasic.test.ts",
+          "line": 13,
+          "column": 5
+        },
+        {
+          "title": "Post without password",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome",
+              "projectName": "Chrome",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 1479,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "\u001b[90mundefined\u001b[39m\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-23T09:12:42.956Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "10b0ad472df95ae32e81-cfee4b07b04a7ca7da58",
+          "file": "tests/API/authBasic.test.ts",
+          "line": 31,
+          "column": 5
+        },
+        {
+          "title": "POST with empty token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome",
+              "projectName": "Chrome",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 1286,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-23T09:12:42.987Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "10b0ad472df95ae32e81-bd106926ea39a0f8aca1",
+          "file": "tests/API/authBasic.test.ts",
+          "line": 47,
+          "column": 5
+        },
+        {
+          "title": "Get TOKEN - Auth ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome",
+              "projectName": "Chrome",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "status": "passed",
+                  "duration": 1510,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "token=Tdn2yScYxnj970ah; Path=/\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-23T09:12:42.977Z",
                   "attachments": []
                 }
               ],
@@ -97,7 +201,39 @@
           "id": "10b0ad472df95ae32e81-8b83112d791cbc0b1400",
           "file": "tests/API/authBasic.test.ts",
           "line": 62,
-          "column": 6
+          "column": 5
+        },
+        {
+          "title": "GET Booking with POM implementation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome",
+              "projectName": "Chrome",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 822,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-05-23T09:12:45.630Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "10b0ad472df95ae32e81-febe7f45c9d0fa3f3dfc",
+          "file": "tests/API/authBasic.test.ts",
+          "line": 95,
+          "column": 5
         }
       ]
     }

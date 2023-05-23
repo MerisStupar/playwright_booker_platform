@@ -37,14 +37,11 @@ export default class RoomsPage {
     async getRoom(){
 
         const response = await this.page.request.get('/room/', { headers: {} });
-
         expect(response.status()).toBe(200);
 
         const body = await response.json();
         //console.log(body);
         return body;
-
-
     }
 
 

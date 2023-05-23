@@ -6,6 +6,22 @@ export default class RoomsPage {
 
     constructor (public page:Page){}
 
+    private cookies;
+
+    async getToken(){
+    const response = await this.page.request.post("auth/login", {
+        data: {
+            username: "admin",
+            password: "password"
+        },
+    });
+
+    expect(response.status()).toBe(200);
+    const headers = await response.headers();
+    this.cookies = headers["set-cookie"];
+
+    }
+
 
     async getHealthCheckRoom(){
 
@@ -24,7 +40,7 @@ export default class RoomsPage {
         });
 
         const body = await response.json();
-        console.log(body);
+        // console.log(body);
         
         expect(response.status()).toBe(201);
         expect(body.type).toBe(roomData.type);
@@ -36,15 +52,29 @@ export default class RoomsPage {
 
     async getRoom(){
 
-        const response = await this.page.request.get('/room/', { headers: {} });
-
+        await this.getToken();
+        const response = await this.page.request.get('/room/', { headers: {
+            cookie: this.cookies
+        } });
+        // console.log(this.cookies);
         expect(response.status()).toBe(200);
-
         const body = await response.json();
         //console.log(body);
         return body;
+    }
 
 
+    async updateRoom(roomID, updateRoomData){
+        await this.getToken();
+        const respose = await this.page.request.put(`/room/${roomID}`, {
+            data: JSON.stringify(updateRoomData),
+        })
+        
+        const updatedBody = await respose.json();
+
+        expect(respose.status()).toBe(202);
+    
+        return updatedBody;
     }
 
 

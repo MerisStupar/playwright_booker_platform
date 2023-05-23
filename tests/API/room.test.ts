@@ -8,10 +8,12 @@ test.beforeEach(async ({ page }) => {
     const roomPage = new RoomsPage(page);
     await roomPage.getHealthCheckRoom();
 
+    // await roomPage.getToken();
+
 });
 
 
-test.only('Create room - API Test', async ({ page }) => {
+test('Create room - API Test', async ({ page }) => {
 
     const roomPage = new RoomsPage(page);
 
@@ -27,7 +29,7 @@ test.only('Create room - API Test', async ({ page }) => {
     expect(lastRoom.roomName).toBe(roomData.roomName)
     expect(lastRoom.image).toBe(roomData.image);
     expect(lastRoom.roomPrice).toBe(roomData.roomPrice);
-    
+
 });
 
 

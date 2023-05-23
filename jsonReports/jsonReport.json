@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Users\\ZIRA\\Desktop\\Repo\\playwright_booker_platform\\playwright.config.ts",
-    "rootDir": "C:/Users/ZIRA/Desktop/Repo/playwright_booker_platform",
+    "configFile": "C:\\Users\\Meris\\Desktop\\playwright_booker_platform\\playwright.config.ts",
+    "rootDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -37,12 +37,12 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Users/ZIRA/Desktop/Repo/playwright_booker_platform/test-results",
+        "outputDir": "C:/Users/Meris/Desktop/playwright_booker_platform/test-results",
         "repeatEach": 1,
         "retries": 0,
         "id": "Chrome",
         "name": "Chrome",
-        "testDir": "C:/Users/ZIRA/Desktop/Repo/playwright_booker_platform",
+        "testDir": "C:/Users/Meris/Desktop/playwright_booker_platform",
         "testIgnore": [],
         "testMatch": [
           "tests/API/room.test.ts"
@@ -53,11 +53,7 @@
     "shard": null,
     "updateSnapshots": "missing",
     "version": "1.33.0",
-<<<<<<< HEAD
     "workers": 2,
-=======
-    "workers": 4,
->>>>>>> 75246bac4a75ebe6a4c5e91ae2177234a8eda535
     "webServer": null
   },
   "suites": [
@@ -68,11 +64,7 @@
       "line": 0,
       "specs": [
         {
-<<<<<<< HEAD
-          "title": "Create room - API Test",
-=======
-          "title": "Post without username",
->>>>>>> 75246bac4a75ebe6a4c5e91ae2177234a8eda535
+          "title": "Create room - then updated with new data - API Test",
           "ok": true,
           "tags": [],
           "tests": [
@@ -86,169 +78,29 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-<<<<<<< HEAD
-                  "duration": 1465,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-23T13:44:26.287Z",
-=======
-                  "duration": 1504,
+                  "duration": 2028,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "\u001b[90mundefined\u001b[39m\n"
+                      "text": "This is roomID of created room: 3\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-23T09:12:42.959Z",
->>>>>>> 75246bac4a75ebe6a4c5e91ae2177234a8eda535
+                  "startTime": "2023-05-23T13:54:58.056Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-<<<<<<< HEAD
-          "id": "dfb350517123a92aafbf-b75794ce1c67c4a452d5",
-          "file": "tests/API/room.test.ts",
-          "line": 16,
-          "column": 5
-        },
-        {
-          "title": "Create room - then updated with new data - API Test",
-=======
-          "id": "10b0ad472df95ae32e81-68e368d0d23d52716abe",
-          "file": "tests/API/authBasic.test.ts",
-          "line": 13,
-          "column": 5
-        },
-        {
-          "title": "Post without password",
->>>>>>> 75246bac4a75ebe6a4c5e91ae2177234a8eda535
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Chrome",
-              "projectName": "Chrome",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "status": "passed",
-<<<<<<< HEAD
-                  "duration": 1674,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "This is roomID of created room: 5\n"
-=======
-                  "duration": 1479,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "\u001b[90mundefined\u001b[39m\n"
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-23T09:12:42.956Z",
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "10b0ad472df95ae32e81-cfee4b07b04a7ca7da58",
-          "file": "tests/API/authBasic.test.ts",
-          "line": 31,
-          "column": 5
-        },
-        {
-          "title": "POST with empty token",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Chrome",
-              "projectName": "Chrome",
-              "results": [
-                {
-                  "workerIndex": 2,
-                  "status": "passed",
-                  "duration": 1286,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-05-23T09:12:42.987Z",
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "10b0ad472df95ae32e81-bd106926ea39a0f8aca1",
-          "file": "tests/API/authBasic.test.ts",
-          "line": 47,
-          "column": 5
-        },
-        {
-          "title": "Get TOKEN - Auth ",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "Chrome",
-              "projectName": "Chrome",
-              "results": [
-                {
-                  "workerIndex": 3,
-                  "status": "passed",
-                  "duration": 1510,
-                  "errors": [],
-                  "stdout": [
-                    {
-                      "text": "token=Tdn2yScYxnj970ah; Path=/\n"
->>>>>>> 75246bac4a75ebe6a4c5e91ae2177234a8eda535
-                    }
-                  ],
-                  "stderr": [],
-                  "retry": 0,
-<<<<<<< HEAD
-                  "startTime": "2023-05-23T13:44:26.287Z",
-=======
-                  "startTime": "2023-05-23T09:12:42.977Z",
->>>>>>> 75246bac4a75ebe6a4c5e91ae2177234a8eda535
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-<<<<<<< HEAD
           "id": "dfb350517123a92aafbf-ee3ead802da368a39b18",
           "file": "tests/API/room.test.ts",
-          "line": 36,
-=======
-          "id": "10b0ad472df95ae32e81-8b83112d791cbc0b1400",
-          "file": "tests/API/authBasic.test.ts",
-          "line": 62,
+          "line": 15,
           "column": 5
         },
         {
-          "title": "GET Booking with POM implementation",
+          "title": "Create room - API Test",
           "ok": true,
           "tags": [],
           "tests": [
@@ -262,22 +114,21 @@
                 {
                   "workerIndex": 1,
                   "status": "passed",
-                  "duration": 822,
+                  "duration": 1594,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-05-23T09:12:45.630Z",
+                  "startTime": "2023-05-23T13:54:58.053Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "10b0ad472df95ae32e81-febe7f45c9d0fa3f3dfc",
-          "file": "tests/API/authBasic.test.ts",
-          "line": 95,
->>>>>>> 75246bac4a75ebe6a4c5e91ae2177234a8eda535
+          "id": "dfb350517123a92aafbf-b75794ce1c67c4a452d5",
+          "file": "tests/API/room.test.ts",
+          "line": 44,
           "column": 5
         }
       ]

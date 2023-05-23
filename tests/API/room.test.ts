@@ -12,27 +12,6 @@ test.beforeEach(async ({ page }) => {
 
 });
 
-
-test('Create room - API Test', async ({ page }) => {
-
-    const roomPage = new RoomsPage(page);
-
-    await roomPage.getHealthCheckRoom();
-    //Creating room from admin side
-    await roomPage.createRoom();
-
-    //Validate on front page that room is visible
-    const bodyRoom = await roomPage.getRoom();
-    const lastIndex = bodyRoom.rooms.length - 1;
-    const lastRoom = bodyRoom.rooms[lastIndex];
-
-    expect(lastRoom.roomName).toBe(roomData.roomName)
-    expect(lastRoom.image).toBe(roomData.image);
-    expect(lastRoom.roomPrice).toBe(roomData.roomPrice);
-
-});
-
-
 test('Create room - then updated with new data - API Test', async ({ page }) => {
 
     const roomPage = new RoomsPage(page);
@@ -60,6 +39,28 @@ test('Create room - then updated with new data - API Test', async ({ page }) => 
     expect(response.roomPrice).toBe(updateRoom.roomPrice);
 
 });
+
+
+test('Create room - API Test', async ({ page }) => {
+
+    const roomPage = new RoomsPage(page);
+
+    await roomPage.getHealthCheckRoom();
+    //Creating room from admin side
+    await roomPage.createRoom();
+
+    //Validate on front page that room is visible
+    const bodyRoom = await roomPage.getRoom();
+    const lastIndex = bodyRoom.rooms.length - 1;
+    const lastRoom = bodyRoom.rooms[lastIndex];
+
+    expect(lastRoom.roomName).toBe(roomData.roomName)
+    expect(lastRoom.image).toBe(roomData.image);
+    expect(lastRoom.roomPrice).toBe(roomData.roomPrice);
+
+});
+
+
 
 
 

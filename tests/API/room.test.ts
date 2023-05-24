@@ -61,6 +61,34 @@ test('Create room - API Test', async ({ page }) => {
 });
 
 
+test('Delete room - API Test', async ({ page }) => {
+
+    const response = await page.request.post("auth/login", {
+        data: {
+            username: "admin",
+            password: "password"
+        },
+    });
+
+    expect(response.status()).toBe(200);
+    const headers = await response.headers();
+    const cookie = headers["set-cookie"];
+   
+    const responseDelete = await page.request.delete('https://automationintesting.online/room/2', {
+        headers: {
+            cookie: cookie
+        },
+
+    });
+
+    expect(responseDelete.status()).toBe(202);
+    
+ 
+
+});
+
+
+
 
 
 

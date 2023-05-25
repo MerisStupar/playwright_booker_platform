@@ -55,9 +55,6 @@ export default class RoomsPage {
 
     }
 
-
-
-
     async getRoom() {
 
         const cookie = await this.getToken();
@@ -91,6 +88,21 @@ export default class RoomsPage {
         expect(respose.status()).toBe(202);
     
         return updatedBody;
+    }
+
+
+    async deleteRoom(roomID){
+        
+        const cookie = await this.getToken();
+
+        const response = await this.page.request.delete(`https://automationintesting.online/room/${roomID}`, {
+            headers:{
+                cookie: cookie
+            },
+        });
+
+
+        expect(response.status()).toBe(202);
     }
 
 

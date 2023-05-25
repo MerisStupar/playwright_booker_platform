@@ -7,9 +7,6 @@ import * as updateRoom from "../../data-test/roomUpdateDataAPI.json";
 test.beforeEach(async ({ page }) => {
     const roomPage = new RoomsPage(page);
     await roomPage.getHealthCheckRoom();
-
-    // await roomPage.getToken();
-
 });
 
 test('Create room - then updated with new data - API Test', async ({ page }) => {
@@ -54,36 +51,32 @@ test('Create room - API Test', async ({ page }) => {
     const lastIndex = bodyRoom.rooms.length - 1;
     const lastRoom = bodyRoom.rooms[lastIndex];
 
+    console.log(lastRoom);
+
     expect(lastRoom.roomName).toBe(roomData.roomName)
     expect(lastRoom.image).toBe(roomData.image);
     expect(lastRoom.roomPrice).toBe(roomData.roomPrice);
 
 });
 
-
 test('Delete room - API Test', async ({ page }) => {
 
-    const response = await page.request.post("auth/login", {
-        data: {
-            username: "admin",
-            password: "password"
-        },
-    });
-
-    expect(response.status()).toBe(200);
-    const headers = await response.headers();
-    const cookie = headers["set-cookie"];
-   
-    const responseDelete = await page.request.delete('https://automationintesting.online/room/2', {
-        headers: {
-            cookie: cookie
-        },
-
-    });
-
-    expect(responseDelete.status()).toBe(202);
+    const roomPage = new RoomsPage(page);
+    const bodyRoom = await roomPage.getRoom();
+    const lastIndex = bodyRoom.rooms.length - 1;
     
- 
+
+    if (lastIndex >= 0) {
+
+      const lastRoom = bodyRoom.rooms[lastIndex];
+      const roomID = lastRoom.roomid;
+    
+      await roomPage.deleteRoom(roomID);
+      console.log(`Room with ID ${roomID} deleted successfully.`);
+
+    } else {
+      console.log('There are no rooms to be deleted.');
+    }
 
 });
 

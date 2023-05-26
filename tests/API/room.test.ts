@@ -37,7 +37,7 @@ test('Create room - then updated with new data - API Test', async ({ page }) => 
 
 });
 
-
+//!Creating room from admin side then validate on front page with API 
 test('Create room - API Test', async ({ page }) => {
 
     const roomPage = new RoomsPage(page);
@@ -77,8 +77,8 @@ test('Delete room - API Test', async ({ page }) => {
     } else {
       console.log('There are no rooms to be deleted.');
     }
-
 });
+
 
 
 

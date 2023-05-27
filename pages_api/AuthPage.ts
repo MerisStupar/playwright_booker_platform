@@ -16,4 +16,20 @@ export default class AuthPage{
     }
 
 
+    async getToken(){
+        const response = await this.page.request.post("auth/login", {
+            data: {
+                username: "admin",
+                password: "password"
+            },
+        });
+    
+        expect(response.status()).toBe(200);
+        const headers = await response.headers();
+        const cookie = headers["set-cookie"];
+    
+        return cookie;
+    
+        }
+
 }

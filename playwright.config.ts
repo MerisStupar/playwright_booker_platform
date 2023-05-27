@@ -24,10 +24,10 @@ const config: PlaywrightTestConfig = {
 
     //Obratiti paznju na testove koji se pokrecu
     // testMatch: ["tests/client.test.ts"],
-    testMatch: ["tests/API/branding.test.ts"],
+    testMatch: ["tests/API/messages.test.ts"],
     use: {
         baseURL: "https://automationintesting.online",
-        headless: false,
+        headless: true,
         screenshot: "off",
         video: "off",
         //Ovdje promijeniti api token ako pada

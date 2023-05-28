@@ -42,6 +42,7 @@ export default class RoomsPage {
         expect(body.roomName).toBe(roomData.roomName);
         expect(body.roomPrice).toBe(roomData.roomPrice);
 
+        return body;
     }
 
 

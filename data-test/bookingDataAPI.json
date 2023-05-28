@@ -1,0 +1,12 @@
+{
+    "roomid": 2,
+    "firstname": "Automation",
+    "lastname": "Tester",
+    "depositpaid": true,
+    "email": "tester@email.com",
+    "phone": "07123456789",
+    "bookingdates": {
+        "checkin": "2024-02-01",
+        "checkout": "2025-02-05"
+    }
+}

@@ -44,6 +44,18 @@ export default class MessagePage{
 
     }
 
+    async getCountMessage(){
+
+        const response = await this.page.request.get('/message/count');
+        const body = await response.json();
+        const messageCount = body.count;
+
+        expect(response.status()).toBe(200);
+        expect(body).toHaveProperty("count");
+
+        return messageCount;
+    }
+
 
     async getMessage(messageID){
 
@@ -78,8 +90,36 @@ export default class MessagePage{
 
         expect(response.status()).toBe(200);
 
-        
         return body;
+    }
+
+    async MarkAsReadMessage(messageID){
+
+        const cookie = await this.getToken();
+
+        const response = await this.page.request.put(`/message/${messageID}/read`, {
+            headers: {
+                cookie: cookie
+            },
+        });
+
+        expect(response.status()).toBe(202);
+
+    }
+
+    async DeleteMessage(messageID){
+        const cookie = await this.getToken();
+
+        const response = await this.page.request.delete(`/message/${messageID}`, {
+            headers:{
+                cookie: cookie
+            },
+        });
+
+        expect(response.status()).toBe(202);
+
+
+
     }
 
 }

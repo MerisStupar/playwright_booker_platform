@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "test:multiple": "npx playwright test --repeat-each=5",
-    "test:api": "npx playwright test --repeat-each=9 --workers 6"
+    "test:multiple": "npx playwright test --repeat-each=5 --workers 6",
+    "test:api": "npx playwright test"
   },
   "repository": {
     "type": "git",

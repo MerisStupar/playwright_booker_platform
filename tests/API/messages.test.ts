@@ -1,7 +1,6 @@
 import {test, expect} from "@playwright/test";
 import MessagePage from "../../pages_api/MessagesPage";
 import * as roomData from "../..//data-test/messageDataAPI.json";
-import { log } from "console";
 
 
 

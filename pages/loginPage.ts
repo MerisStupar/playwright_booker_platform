@@ -13,6 +13,8 @@ export default class LoginPage{
     logoutNavbar = this.page.locator(`//a[contains(text(),'Logout')]`);
     loginHeaderText = this.page.locator(`h2[data-testid='login-header']`);
 
+    notificationIcon = this.page.locator(`.nav-link > i.fa-inbox`);
+
 
     async enterUsername(username: string){
         await this.usernameField.type(username);

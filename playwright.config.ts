@@ -8,9 +8,9 @@ const config: PlaywrightTestConfig = {
 
     projects: [
         {
-             name: "Chrome",
+             name: "Firefox",
              use: {
-                ...devices["Desktop Chrome"]
+                ...devices["Desktop Firefox"]
              }
         },
 
@@ -24,12 +24,12 @@ const config: PlaywrightTestConfig = {
 
     //Obratiti paznju na testove koji se pokrecu
     // testMatch: ["tests/client.test.ts"],
-    testMatch: ["tests/DB/dvdrental.test.ts"],
+    testMatch: ["tests/UI_API/first.test.ts"],
     use: {
         baseURL: "https://automationintesting.online",
-        headless: true,
-        screenshot: "off",
-        video: "off",
+        headless: false,
+        screenshot: "on",
+        video: "on",
         //Ovdje promijeniti api token ako pada
         extraHTTPHeaders: {
             'Content-Type': 'application/json',

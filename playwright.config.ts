@@ -24,7 +24,7 @@ const config: PlaywrightTestConfig = {
 
     //Obratiti paznju na testove koji se pokrecu
     // testMatch: ["tests/client.test.ts"],
-    testMatch: ["tests/UI_API/first.test.ts"],
+    testMatch: ["tests/UI_API/apiui.test.ts"],
     use: {
         baseURL: "https://automationintesting.online",
         headless: false,

@@ -1,5 +1,6 @@
 import { Page, expect } from "@playwright/test";
 import * as clientData from "../data-test/clientData.json";
+import * as roomData from "../data-test/messageDataAPI.json";
 
 export default class LoginPage{
 
@@ -95,6 +96,38 @@ export default class LoginPage{
         expect(await fromUserMessage.textContent()).toContain(`${clientData.message}`);
 
         await closeButtonPopup.click();
+    }
+
+
+
+    async validMessage_UIAPI(){
+        await this.page.locator(`.nav-link > i.fa-inbox`).click();
+
+        const rowMessage = this.page.locator(`.row.detail.read-false:last-child`).last();
+        const toText = await rowMessage.textContent()
+        expect(toText).toContain(roomData.name && roomData.subject);
+    
+    
+        await rowMessage.click();
+    
+        const messagePopup =this. page.locator(`div[role='dialog']`);
+    
+        const fromUserName = this.page.locator(`div.col-10`);
+        const fromUserPhone = this.page.locator(`div.col-2 p`);
+        const fromUserEmail = this.page.locator(`(//div[@class='col-12']//p)[1]`);
+        const fromUserSubject = this.page.locator(`(//div[@class='col-12']//span)[2]`);
+        const fromUserMessage = this.page.locator(`(//div[@class='col-12']//p)[3]`);
+    
+        await messagePopup.isVisible();
+    
+        await this.page.waitForTimeout(500);
+       
+        expect(await fromUserName.textContent()).toContain(`From: ${roomData.name}`);
+        expect(await fromUserPhone.textContent()).toContain(`Phone: ${roomData.phone}`);
+        expect(await fromUserEmail.textContent()).toContain(`Email: ${roomData.email}`);
+        expect(await fromUserSubject.textContent()).toContain(`${roomData.subject}`);
+        expect(await fromUserMessage.textContent()).toContain(`${roomData.description}`);
+    
     }
 
 

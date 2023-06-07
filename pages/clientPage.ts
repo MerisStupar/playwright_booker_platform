@@ -220,6 +220,45 @@ export default class ClientPage {
 
   }
 
+  async validateRoomVisibility_UIAPI() {
+
+    const nameOfRoom = await this.page.locator(`//h3[text()='${data.roomType}']`).last();
+    const textContextTile = await nameOfRoom.textContent();
+
+    const imageOfRoom = await this.page.locator(`.col-sm-3>img`).last();
+    const imageElement = await imageOfRoom.elementHandle();
+
+    if (imageElement !== null) {
+      const expectedURL = 'https://www.mwtestconsultancy.co.uk/img/room1.jpg';
+      const imageURL = await (await imageElement.getProperty('src')).jsonValue();
+      const naturalHeight = await (await imageElement.getProperty('naturalHeight')).jsonValue();
+      const naturalWidth = await (await imageElement.getProperty('naturalWidth')).jsonValue();
+
+      expect(naturalHeight).toBeGreaterThan(0);
+      expect(naturalHeight).toBeGreaterThan(0);
+      expect(imageURL).toEqual(expectedURL);
+
+      console.log(`Current size of image: ${naturalHeight}, ${naturalWidth}`);
+
+    } else {
+      throw new Error('Cannot find image of the room.')
+    }
+
+    expect(textContextTile).toContain(data.roomType);
+
+
+    console.log(`Current text from front page of title room is: ${textContextTile}`);
+
+    const liLocators = await this.page.locator('.col-sm-7 > ul').last().all();
+    const expectedLocators = 'WiFiTVRadioRefreshmentsSafeViews'
+    for (const liLocator of liLocators) {
+      const liText = await liLocator.textContent();
+      console.log(`Current list of room details are: ${liText}`);
+      expect(liText).toEqual(expectedLocators)
+    }
+
+  }
+
 }
 
 module.exports = ClientPage;

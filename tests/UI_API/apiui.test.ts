@@ -28,7 +28,7 @@ test('UI+API Test: Sending message with API - Then login with UI', async ({ page
 
 });
 
-test.only('UI+API Test: Create room with API - Then view on UI', async ({ page }) => {
+test.only('UI+API Test: Create room with API - Then view on UI', async ({ page, clientPage }) => {
 
     const roomsPage = new RoomsPage(page);
     const body = await roomsPage.createRoom()
@@ -37,28 +37,9 @@ test.only('UI+API Test: Create room with API - Then view on UI', async ({ page }
     expect(body.roomName).toBe(roomData.roomName);
     expect(body.roomPrice).toBe(roomData.roomPrice);
 
-    await page.goto(`https://automationintesting.online/`);
+    //Validate from the UI that room was correct
+    await clientPage.validateRoomVisibility_UIAPI();
 
-    const nameOfRoom = await page.locator(`//h3[text()='${roomData.type}']`).last();
-    const textContextTile = await nameOfRoom.textContent();
-    const imageOfRoom = await page.locator(`.col-sm-3>img`).last();
-    const imageElement = await imageOfRoom.elementHandle();
-
-
-    if (imageElement !== null) {
-        const expectedURL = `${roomData.image}`;
-        const imageURL = await (await imageElement.getProperty('src')).jsonValue();
-    
-        expect(imageURL).toEqual(expectedURL);
-
-      } else {
-        throw new Error('Cannot find image of the room.')
-      }
-  
-      expect(textContextTile).toContain(roomData.type);
-  
-  
-      console.log(`Current text from front page of title room is: ${textContextTile}`);
 
 });
 

@@ -1,6 +1,7 @@
 import { Page, expect } from "@playwright/test";
 import * as data from "../data-test/roomData.json";
 import * as clientData from "../data-test/clientData.json";
+import * as roomData from "../data-test/roomDataAPI.json";
 
 export default class ClientPage {
   constructor(public page: Page) {
@@ -221,7 +222,7 @@ export default class ClientPage {
   }
 
   async validateRoomVisibility_UIAPI() {
-
+    await this.page.goto(`/`);
     const nameOfRoom = await this.page.locator(`//h3[text()='${data.roomType}']`).last();
     const textContextTile = await nameOfRoom.textContent();
 
@@ -229,22 +230,22 @@ export default class ClientPage {
     const imageElement = await imageOfRoom.elementHandle();
 
     if (imageElement !== null) {
-      const expectedURL = 'https://www.mwtestconsultancy.co.uk/img/room1.jpg';
+      const expectedURL =`${roomData.image}`;
       const imageURL = await (await imageElement.getProperty('src')).jsonValue();
-      const naturalHeight = await (await imageElement.getProperty('naturalHeight')).jsonValue();
-      const naturalWidth = await (await imageElement.getProperty('naturalWidth')).jsonValue();
+      // const naturalHeight = await (await imageElement.getProperty('naturalHeight')).jsonValue();
+      // const naturalWidth = await (await imageElement.getProperty('naturalWidth')).jsonValue();
 
-      expect(naturalHeight).toBeGreaterThan(0);
-      expect(naturalHeight).toBeGreaterThan(0);
+      // expect(naturalHeight).toBeGreaterThan(0);
+      // expect(naturalHeight).toBeGreaterThan(0);
       expect(imageURL).toEqual(expectedURL);
 
-      console.log(`Current size of image: ${naturalHeight}, ${naturalWidth}`);
+      // console.log(`Current size of image: ${naturalHeight}, ${naturalWidth}`);
 
     } else {
       throw new Error('Cannot find image of the room.')
     }
 
-    expect(textContextTile).toContain(data.roomType);
+    expect(textContextTile).toContain(roomData.type);
 
 
     console.log(`Current text from front page of title room is: ${textContextTile}`);

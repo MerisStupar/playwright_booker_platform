@@ -2,6 +2,7 @@ import { Page, expect } from "@playwright/test";
 import * as data from "../data-test/roomData.json";
 import * as clientData from "../data-test/clientData.json";
 import * as roomData from "../data-test/roomDataAPI.json";
+import * as brandingData from "../data-test/brandingDataAPI.json"
 
 export default class ClientPage {
   constructor(public page: Page) {
@@ -258,6 +259,22 @@ export default class ClientPage {
       expect(liText).toEqual(expectedLocators)
     }
 
+  }
+
+
+  async validateBrandingUIAPI(){
+    await this.page.goto('/');
+
+    const contactName = await this.page.locator(`.col-sm-5 > p:nth-of-type(1)`).textContent();
+    const contactAdress = await this.page.locator(`.col-sm-5 > p:nth-of-type(2)`).textContent();
+    const contactNumber = await this.page.locator(`.col-sm-5 > p:nth-of-type(3)`).textContent();
+    const contactEmail = await this.page.locator(`.col-sm-5 > p:nth-of-type(4)`).textContent();
+
+
+    expect(contactName).toContain(brandingData.contact.name);
+    expect(contactAdress).toContain(brandingData.contact.address);
+    expect(contactNumber).toContain(brandingData.contact.phone);
+    expect(contactEmail).toContain(brandingData.contact.email);
   }
 
 }

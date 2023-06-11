@@ -1,9 +1,11 @@
 import {test, expect} from "../../baseFixture/baseFixture";
 import MessagePage  from "../../pages_api/MessagesPage";
 import RoomsPage from "../../pages_api/RoomsPage";
+import BrandingPage from "../../pages_api/BrandingPage";
 
 import * as messageData from "../../data-test/messageDataAPI.json";
 import * as roomData from "../../data-test/roomDataAPI.json";
+import * as brandingData from "../../data-test/brandingDataAPI.json"
 
 
 test.beforeEach(async ({page, baseURL}) =>{
@@ -28,7 +30,7 @@ test('UI+API Test: Sending message with API - Then login with UI', async ({ page
 
 });
 
-test.only('UI+API Test: Create room with API - Then view on UI', async ({ page, clientPage }) => {
+test('UI+API Test: Create room with API - Then view on UI', async ({ page, clientPage }) => {
 
     const roomsPage = new RoomsPage(page);
     const body = await roomsPage.createRoom()
@@ -40,6 +42,23 @@ test.only('UI+API Test: Create room with API - Then view on UI', async ({ page, 
     //Validate from the UI that room was correct
     await clientPage.validateRoomVisibility_UIAPI();
 
+});
+
+test.only('UI+API Test: Update branding with API - Then valdiate on Ui', async ({ page, clientPage }) => {
+
+
+    const brandingPage = new BrandingPage(page);
+    const body = await brandingPage.updateBranding();
+
+    expect(body.name).toBe(brandingData.name);
+    expect(body.logoUrl).toBe(brandingData.logoUrl);
+    expect(body.description).toBe(brandingData.description);
+    expect(body.contact.phone).toBe(brandingData.contact.phone);
+
+    
+    //Validate from the UI that brading was correct from API test
+    await clientPage.validateBrandingUIAPI();
 
 });
+
 

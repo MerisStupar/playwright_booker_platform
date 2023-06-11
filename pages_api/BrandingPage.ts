@@ -48,6 +48,8 @@ export default class BrandingPage{
 
         expect(response.status()).toBe(202)
 
+        return response.json();
+
     }
 
 

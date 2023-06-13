@@ -56,7 +56,7 @@ export default class AuthPage{
 
         const response = await this.page.request.post("/auth/validate", {
             data: {
-                "token": `${cookieValue}test`
+                "token": `${cookieValue}_brokencookie`
             }
         });
 

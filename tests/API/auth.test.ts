@@ -5,6 +5,11 @@ import AuthPage from "../../pages_api/AuthPage";
 test.describe("Booking - GET requests", async () => {
 
   let _cookies;
+  let authPage;
+
+  test.beforeEach(async ({page}) => {
+    authPage = new AuthPage(page);
+  })
 
   test.beforeAll(async ({request}) =>{
     
@@ -23,33 +28,23 @@ test.describe("Booking - GET requests", async () => {
 
 
   test('Validate token when admin is logged', async ({ page }) => {
-    
-    const authPage = new AuthPage(page);
+
     await authPage.validateToken();
 
   });
 
-  test.only('Validate wrong token when admin is logged', async ({ page }) => {
+  test('Validate wrong token when admin is logged', async ({ page }) => {
     
-    const authPage = new AuthPage(page);
     await authPage.validateFakeToken();
     
   });
-  
 
+  test('Get token then destroy token', async ({ page }) => {
 
-  test("GET all bookings with details", async ({ request }) => {
-
-    const response = await request.get("booking/", {
-      headers: {
-        cookies: _cookies
-      }
-    });
-
-    expect(response.status()).toBe(200);
-    const body = await response.json();
-    console.log(body)
+    //Inside destroyToken there is function that generate the token
+    await authPage.destroyToken();
   });
+  
 
 });
 

@@ -6,10 +6,6 @@ export default class BookingPage{
 
     constructor (public page:Page){}
 
-
-    
-    
-
     async getHealthCheck(){
 
         const response = await this.page.request.get('/booking/actuator/health');
@@ -38,7 +34,11 @@ export default class BookingPage{
     
 
     async getBookings() {
-        const response = await this.page.request.get(`/booking`, { headers: {} });
+
+        const cookie = await this.getToken();
+        const response = await this.page.request.get(`/booking`, { headers: {
+            cookie: cookie
+        } });
         expect(response.status()).toBe(200);
         const body = await response.json();
         // console.log(body);
@@ -51,9 +51,47 @@ export default class BookingPage{
         const response = await this.page.request.post('/booking/', {
             data: bookingData
         });
-
-
         expect(response.status()).toBe(201);
+
+        const body = response.json();
+
+        return body;
+
+    }
+
+    async UpdateBooking(bookingUpdatedData, bookingId){
+        
+        const cookie = await this.getToken();
+
+        const response = await this.page.request.put(`/booking/${bookingId}`, {
+            headers: {
+                cookie: cookie
+            },
+            data: bookingUpdatedData
+        });
+
+        expect(response.status()).toBe(200);
+
+        const body = response.json();
+
+        return body;
+
+    }
+
+
+    async DeleteBooking(bookingId) {
+
+        const cookie = await this.getToken();
+
+        const response = await this.page.request.put(`/booking/${bookingId}`, {
+            headers: {
+                cookie: cookie
+            }
+        });
+
+        expect(response.status()).toBe(202);
+
+        
 
     }
 

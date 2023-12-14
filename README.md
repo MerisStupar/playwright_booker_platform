@@ -93,10 +93,6 @@ Install NPM package
 * [Message Swagger](https://automationintesting.online/message/swagger-ui/index.html#/)
 
 
-Duplicate:
-* [Report Swagger](https://automationintesting.online/report/swagger-ui/index.html#/)
-
-
 
 
 

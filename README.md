@@ -94,20 +94,6 @@ Install NPM package
 
 
 
-5. Before running test set the testMatch in playwright.config.ts file
-   ```sh
-    testMatch: ["tests/FolderYouWant/TestYouWant.test.ts"],
-    testMatch: ["tests/API/auth.test.ts"]  --> Example 
-   ```
-
-   
-* [Report Swagger](https://automationintesting.online/report/swagger-ui/index.html#/)
-* [Message Swagger](https://automationintesting.online/message/swagger-ui/index.html#/)
-* [Report Swagger](https://automationintesting.online/report/swagger-ui/index.html#/)
-* [Message Swagger](https://automationintesting.online/message/swagger-ui/index.html#/)
-
-
-
 
 
 

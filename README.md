@@ -102,4 +102,33 @@ Install NPM package
 
 
 
+
+### Preparation2
+1. Clone the repo
+   ```sh
+   git clone https://github.com/MerisStupar/playwright_booker_platform.git
+   ```
+2. Install Playwright
+   ```sh
+   npm init playwright@latest
+   ```
+3. Dotenv 
+   ```sh
+   npm install dotenv --save
+   ```
+4. Set your .dotenv file in root of the folder. I've use following .env variables
+   ```sh
+   USERNAME_OF_ADMIN=admin
+   PASSWORD_OF_ADMIN=password
+   API_TOKEN=SetYourValue
+   ```
+5. Before running test set the testMatch in playwright.config.ts file
+   ```sh
+    testMatch: ["tests/FolderYouWant/TestYouWant.test.ts"],
+    testMatch: ["tests/API/auth.test.ts"]  --> Example 
+   ```
+6. Running the Example Test
+   ```sh
+   npx playwright test --> Runs all test from testMatch or you can use scripts from package.json
+
 <p align="right">[<a href="#top">back to top</a>]</p>

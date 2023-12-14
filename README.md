@@ -100,6 +100,15 @@ Install NPM package
     testMatch: ["tests/API/auth.test.ts"]  --> Example 
    ```
 
+   
+* [Report Swagger](https://automationintesting.online/report/swagger-ui/index.html#/)
+* [Message Swagger](https://automationintesting.online/message/swagger-ui/index.html#/)
+* [Report Swagger](https://automationintesting.online/report/swagger-ui/index.html#/)
+* [Message Swagger](https://automationintesting.online/message/swagger-ui/index.html#/)
+
+
+
+
 
 
 * [Auth Swagger](https://automationintesting.online/auth/swagger-ui/index.html#/)

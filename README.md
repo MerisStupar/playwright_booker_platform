@@ -93,6 +93,19 @@ Install NPM package
 * [Message Swagger](https://automationintesting.online/message/swagger-ui/index.html#/)
 
 
+
+
+## Useful Swagger Links For Booker-Platform VERSION 2
+
+* [Auth Swagger](https://automationintesting.online/auth/swagger-ui/index.html#/)
+* [Booking Swagger](https://automationintesting.online/booking/swagger-ui/index.html#/)
+* [Room Swagger](https://automationintesting.online/room/swagger-ui/index.html#/)
+* [Branding Swagger](https://automationintesting.online/branding/swagger-ui/index.html#/)
+* [Report Swagger](https://automationintesting.online/report/swagger-ui/index.html#/)
+* [Message Swagger](https://automationintesting.online/message/swagger-ui/index.html#/)
+
+
+
 <p align="right">[<a href="#top">back to top</a>]</p>
 <p align="right">[<a href="#top">back to top</a>]</p>
 <p align="right">[<a href="#top">back to top</a>]</p>
